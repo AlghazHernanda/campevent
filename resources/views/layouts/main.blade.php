@@ -14,7 +14,9 @@
 
   {{-- my stylse --}}
   <link rel="stylesheet" href="/source/css/navbar.css">
-
+  <link rel="stylesheet" href="/source/css/login.css">
+  <link rel="stylesheet" href="/source/css/register.css">
+  <link rel="stylesheet" href="/source/css/forgot.css">
 
   <title>CampEvent</title>
 </head>
