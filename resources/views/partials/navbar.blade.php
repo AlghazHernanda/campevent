@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+<nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
     <a class="navbar-brand" href="/"><img src="/source/img/logo.png"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,18 +6,18 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <li class="nav-item-1">
           {{-- di bawah ini memakai operator ternary, jadi jika title = home, maka tambahkan kelas active, kalau engga kasih string kosong --}}
           <a class="nav-link" href="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
+        <li class="nav-item-2">
+          <a class="nav-link" href="/about">Event</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/posts">Event</a>
+        <li class="nav-item-3">
+          <a class="nav-link" href="/posts">About Us</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/categories">Event Categories</a>
+        <li class="nav-item-4">
+          <a class="nav-link" href="/categories">FAQ</a>
         </li>
       </ul>
 
@@ -45,9 +45,8 @@
 
         {{-- kalo belum login, tampilkan logo login --}}
         @else
-        <li class="nav-item">
-          <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right"></i>
-            Login</a>
+        <li class="nav-item-5">
+          <a href="/login" class="nav-link"><button class="btn btn-1">Login</button></a>
         </li>
         @endauth
       </ul>

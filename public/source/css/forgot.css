@@ -1,0 +1,33 @@
+.col-3 h1{
+    font-family: Poppins;
+    font-size: 60px;
+}
+
+.col-3 h6{
+    color: #BDBDBD;
+}
+.col-3{
+    position: absolute;
+    width: 610px;
+    height: 628px;
+    left: 135px;
+    top: 250px;
+}
+
+.img-3{
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    left: 800px;
+    top: 220px;
+}
+
+.btn-5{
+    background-color: #AD8B73;
+    color: #ffffff;
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: larger;
+}

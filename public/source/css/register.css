@@ -1,0 +1,25 @@
+.col-2{
+    position: absolute;
+    width: 610px;
+    height: 628px;
+    left: 135px;
+    top: 250px;
+}
+
+.img-2{
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    left: 800px;
+    top: 260px;
+}
+
+.btn-4{
+    font-family: Poppins;
+    font-size: larger;
+    position: absolute;
+    width: 200px;
+    height: 45px;
+    background-color: #E0DDAA;
+    border-radius: 10px;
+}

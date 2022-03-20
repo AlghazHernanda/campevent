@@ -1,3 +1,71 @@
+.navbar{
+    position: absolute;
+    width: 1520px;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    background-color: #CEAB93;
+}
+
 img{
-    width: 150px;
+    position: absolute;
+    width: 256px;
+    height: 68px;
+    left: 40px;
+    top: 16px;
+}
+
+.nav-item-1 .nav-link{
+    font-family: poppins;
+    font-style: semibold;
+    font-size: x-large;
+    position: absolute;
+    left: 900px;
+    top: 26px;
+}
+
+.nav-item-2{
+    font-family: poppins;
+    font-style: semibold;
+    font-size: x-large;
+    position: absolute;
+    left: 1020px;
+    top: 26px;
+}
+
+.nav-item-3{
+    font-family: poppins;
+    font-style: semibold;
+    font-size: x-large;
+    position: absolute;
+    left: 1120px;
+    top: 26px;
+}
+
+.nav-item-4{
+    font-family: poppins;
+    font-style: semibold;
+    font-size: x-large;
+    position: absolute;
+    left: 1260px;
+    top: 26px;
+}
+
+.nav-item-5{
+    font-family: poppins;
+    font-style: semibold;
+    font-size: x-large;
+}
+
+.btn-1{
+    position: absolute;
+    font-family: poppins;
+    font-style: semibold;
+    font-size: large;
+    width: 145px;
+    height: 40px;
+    left: 1360px;
+    top: 40px;
+    background-color: #AD8B73;
+    border-radius: 10px;
 }

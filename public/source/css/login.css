@@ -1,7 +1,76 @@
-.background{
-    background-color: #b19106 ;
-}
-
 h2{
     font-family: Poppins;
+}
+
+body{
+    background-color: #FFFBE9;
+}
+
+.col-1{
+    position: absolute;
+    width: 610px;
+    height: 628px;
+    left: 135px;
+    top: 250px;
+}
+
+
+.btn-2{
+    background-color: #AD8B73;
+    position: absolute;
+    width: 250px;
+    height: 45px;
+    left: 215px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.forgot{
+    position: absolute;
+    font-weight: bold;
+    width: 166px;
+    height: 27px;
+    left: 280px;
+    top: 310px;
+}
+
+.atau{
+    position: absolute;
+    width: 36px;
+    height: 45px;
+    left: 320px;
+    top: 350px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+}
+
+.btn-3{
+    background-color: #E0DDAA;
+    position: absolute;
+    width: 250px;
+    height: 45px;
+    left: 220px;
+    top: 400px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    border-radius: 10px;
+}
+
+.img-1{
+    position: absolute;
+    width: 531px;
+    height: 517px;
+    left: 800px;
+    top: 260px;
 }
