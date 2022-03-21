@@ -40,8 +40,8 @@
                 <br>
                 <div class="mb-3">
                     <label for="" class="form-label"><b>Confirm Password</b></label>
-                    <input type="password" id="" class="form-control @error('confirm_password') is-invalid @enderror" name="confirm_password" aria-describedby="passwordHelpBlock" required>
-                    @error('confirm_password')
+                    <input type="password" id="" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" aria-describedby="passwordHelpBlock" required>
+                    @error('password_confirmation')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

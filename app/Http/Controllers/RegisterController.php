@@ -15,24 +15,28 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+
         // mengvalidasi data nya agar ga ngasal
         $validatedData = $request->validate([
             'fullname' => 'required|max:255', //wajib diisi | maksimal 255
             'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:5|max:255',
-            'confirm_password' => 'required|min:5|max:255'
+            'password' => 'required|min:5|max:255|confirmed',
+            'password_confirmation' => 'required'
 
         ]);
 
-        //$validatedData['password'] = bcrypt($validatedData['password']); //di enkripsi dulu
-        $validatedData['password'] = Hash::make($validatedData['password']); //bisa juga pake cara yang ini
-        $validatedData['confirm_password'] = Hash::make($validatedData['confirm_password']); //bisa juga pake cara yang ini
+        if ($validatedData['password'] == $validatedData['password_confirmation']) {
+            //$validatedData['password'] = bcrypt($validatedData['password']); //di enkripsi dulu
+            $validatedData['password'] = Hash::make($validatedData['password']); //bisa juga pake cara yang ini
+            $validatedData['password_confirmation'] = $validatedData['password'];
 
-        User::create($validatedData); //masukin ke database
+            User::create($validatedData); //masukin ke database
 
-        //$request->session()->flash('success', 'Registration successfull! please login'); //nampilin pesan sukses di halaman login
+            //$request->session()->flash('success', 'Registration successfull! please login'); //nampilin pesan sukses di halaman login
 
-        return redirect('/login')->with('success', 'Registration successfull! please login'); //sama aja kyk yg di atas, ini lebih simpel
-
+            return redirect('/login')->with('success', 'Registration successfull! please login'); //sama aja kyk yg di atas, ini lebih simpel
+        } else {
+            return back()->with('RegisterError', 'Register Failed');
+        }
     }
 }
