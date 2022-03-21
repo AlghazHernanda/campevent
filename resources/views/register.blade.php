@@ -10,7 +10,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="fullname" class="form-label"><b>Full Name</b></label>
-                    <input type="text" class="form-control @error('fullname') is-invalid @enderror" id="fullname" name="fullname" placeholder="Enter your full name">
+                    <input type="text" class="form-control @error('fullname') is-invalid @enderror" id="fullname" name="fullname" placeholder="Enter your full name"  value="{{ old('fullname') }}">
                     @error('fullname')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -20,7 +20,7 @@
                 <br>
                 <div class="mb-3">
                     <label for="email" class="form-label"><b>Email</b></label>
-                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email">
+                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email"  value="{{ old('email') }}">
                     @error('email')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -30,7 +30,7 @@
                 <br>
                 <div class="mb-3">
                     <label for="password" class="form-label"><b>Password</b></label>
-                    <input type="password" id="inputPassword5" class="form-control @error('password') is-invalid @enderror" name="password" aria-describedby="passwordHelpBlock" required>
+                    <input type="password" id="inputPassword5" class="form-control @error('password') is-invalid @enderror" name="password" aria-describedby="passwordHelpBlock" required >
                     @error('password')
                     <div class="invalid-feedback">
                         {{ $message }}
