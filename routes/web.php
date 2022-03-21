@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('forgot', function () {
     return view('forgot');

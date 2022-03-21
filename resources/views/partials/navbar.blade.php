@@ -25,29 +25,30 @@
       <ul class="navbar-nav ms-auto">
         {{-- kalo udah login, tampilin ini --}}
         @auth
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Welcom Back, </a>
+        {{-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Welcom Back, </a> --}}
           {{-- {{ auth()->user()->name }} --}}
-          <ul class="dropdown-menu">
+          {{-- <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/dashboard"> <i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
             <li>
-              <form action="/logout" method="post">
+              <form action="/logout" method="post"> --}}
+
                 @csrf
-                <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                {{-- <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
 
               </form>
             </li>
           </ul>
-        </li>
+        </li> --}}
 
         {{-- kalo belum login, tampilkan logo login --}}
         @else
-        <li class="nav-item-5">
+        {{-- <li class="nav-item-5">
           <a href="/login" class="nav-link"><button class="btn btn-1">Login</button></a>
-        </li>
+        </li> --}}
         @endauth
       </ul>
 
