@@ -1,0 +1,156 @@
+#Footer {
+    background-color: #f7CC74;
+    padding-bottom: 32px;
+}
+  
+#Footer .about .logo {
+    margin-bottom: 15px;
+    margin-top: 56px;
+}
+  
+#Footer .about .logo img {
+    width: 363px;
+    height: 91px;
+}
+  
+#Footer .about .logo .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #F3F4F8;
+    margin-left: 8px;
+}
+  
+#Footer .about p {
+    color: #F3F4F8;
+    text-align: justify;
+}
+  
+#Footer .company{
+    margin-top: 78px;
+    margin-left: 0px;
+    padding-left:50px;
+    padding-right:50px;
+}
+  
+#Footer h3 {
+    color: #F3F4F8;
+    margin-bottom: 18px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+}
+  
+#Footer h2 {
+    color: #F3F4F8;
+    margin-bottom: 27px;
+}
+  
+#Footer ul{
+    padding: 0;
+}
+  
+#Footer .company ul li, #Footer ul li{
+    list-style-type: none;
+    margin-bottom: 24px;
+}
+  
+#Footer .company ul li, #Footer ul li a{
+    text-decoration: none;
+    color: #F3F4F8;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+}
+  
+#Footer .services {
+    margin-top: 70px;
+}
+  
+#Footer .services a{
+    margin-right: 30px;
+}
+  
+#Footer .com-link:hover{
+    color:  #7c684a;
+}
+  
+#Footer .ser-link:hover{
+    color:  #7c684a;
+    font-size: 35px;
+}
+  
+#Footer .bi-instagram{
+    color: #fafafa;
+    font-size: 35px;
+}
+  
+#Footer .bi-instagram:hover{
+    color: #7c684a;
+}
+  
+#Footer .bi-tiktok{
+    color: #fafafa;
+    font-size: 35px;
+}
+  
+#Footer .bi-tiktok:hover{
+    color: #7c684a;
+}
+  
+#Footer .bi-youtube{
+    color: #fafafa;
+    font-size: 35px;
+}
+  
+#Footer .bi-youtube:hover{
+    color: #7c684a;
+}
+  
+#Footer .bi-twitter{
+    color: #fafafa;
+    font-size: 35px;
+}
+  
+#Footer .bi-twitter:hover{
+    color: #7c684a;
+}
+  
+#Footer .bi-telegram{
+    color: #fafafa;
+    font-size: 35px;
+}
+  
+#Footer .bi-telegram:hover{
+    color: #7c684a;
+}
+  
+#Footer .bi-linkedin{
+    color: #fafafa;
+    font-size: 35px;
+}
+  
+  
+#Footer .bi-linkedin:hover{
+    color: #7c684a;
+}
+  
+.vl {
+    border-left: 2px solid rgb(255, 255, 255);
+    height: 244px;
+    margin-top: 86px;
+}
+  
+.hr1 {
+    border: 0.75px solid rgb(255, 255, 255);
+}
+  
+.copyright{
+  padding-top:5px;
+  padding-bottom:5px;
+}

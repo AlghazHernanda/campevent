@@ -1,71 +1,40 @@
 .navbar{
-    position: absolute;
-    width: 1520px;
-    height: 100px;
-    left: 0px;
-    top: 0px;
+    height: 64px;
     background-color: #CEAB93;
 }
 
-img{
-    position: absolute;
-    width: 256px;
-    height: 68px;
-    left: 40px;
-    top: 16px;
+.logo{
+    width: 240px;
+    height: 60px;
 }
 
-.nav-item-1 .nav-link{
-    font-family: poppins;
-    font-style: semibold;
-    font-size: x-large;
-    position: absolute;
-    left: 900px;
-    top: 26px;
+#Navbar .nav-link {
+    margin-left: 40px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    font-size: 15px;
+    line-height: 150%;
+    color: #FAFAFA;
 }
 
-.nav-item-2{
-    font-family: poppins;
-    font-style: semibold;
-    font-size: x-large;
-    position: absolute;
-    left: 1020px;
-    top: 26px;
-}
-
-.nav-item-3{
-    font-family: poppins;
-    font-style: semibold;
-    font-size: x-large;
-    position: absolute;
-    left: 1120px;
-    top: 26px;
-}
-
-.nav-item-4{
-    font-family: poppins;
-    font-style: semibold;
-    font-size: x-large;
-    position: absolute;
-    left: 1260px;
-    top: 26px;
-}
-
-.nav-item-5{
-    font-family: poppins;
-    font-style: semibold;
-    font-size: x-large;
-}
-
-.btn-1{
-    position: absolute;
-    font-family: poppins;
-    font-style: semibold;
-    font-size: large;
-    width: 145px;
-    height: 40px;
-    left: 1360px;
-    top: 40px;
-    background-color: #AD8B73;
-    border-radius: 10px;
-}
+#Navbar .btn {
+    margin-left: 40px;
+    font-style: normal;
+    font-weight: 600;
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 150%;
+    padding: 4px 45px;
+    background-color: #ad8b73;
+    color: #FAFAFA;
+    margin-top: 3px;
+  }
+  
+  #Navbar .btn:hover{
+    background-color:#7c684a;
+    color: #fafafa;
+  }
+  
+  #Navbar .nav-link:hover{
+    color:  #7c684a;
+  }

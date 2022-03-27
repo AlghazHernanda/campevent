@@ -16,8 +16,19 @@ use App\Http\Controllers\ForgotPasswordController;
 |
 */
 
+//home
 Route::get('/', function () {
     return view('welcome');
+});
+
+//about us
+Route::get('about', function () {
+    return view('about');
+});
+
+//faq
+Route::get('faq', function () {
+    return view('faq');
 });
 
 //login

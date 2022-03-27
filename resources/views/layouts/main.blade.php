@@ -12,11 +12,17 @@
   {{-- Boostrap Icons --}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
+  {{-- Google Font --}}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+
   {{-- my stylse --}}
   <link rel="stylesheet" href="/source/css/navbar.css">
   <link rel="stylesheet" href="/source/css/login.css">
   <link rel="stylesheet" href="/source/css/register.css">
   <link rel="stylesheet" href="/source/css/forgot.css">
+  <link rel="stylesheet" href="/source/css/faq.css">
+  <link rel="stylesheet" href="/source/css/footer.css">
+  <link rel="stylesheet" href="/source/css/about.css">
 
   <title>CampEvent</title>
 </head>
@@ -32,7 +38,8 @@
 
   </div>
 
-
+  {{-- manggil footer di folder partials.navbar --}}
+  @include('partials.footer')
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
