@@ -31,6 +31,14 @@ Route::get('faq', function () {
     return view('faq');
 });
 
+//reset password
+Route::get('reset', function () {
+    return view('reset');
+});
+Route::get('resetcheck', function () {
+    return view('resetcheck');
+});
+
 //login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 //login authenticate
@@ -46,3 +54,8 @@ Route::get('/forgot', [ForgotPasswordController::class, 'ForgetPassword']);
 Route::post('/forgot', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordPost');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'ResetPassword'])->name('ResetPasswordGet');
 Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
+
+//register check
+Route::get('registercheck', function () {
+    return view('registercheck');
+});

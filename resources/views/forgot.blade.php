@@ -1,29 +1,35 @@
-@extends('layouts.main') {{-- ini memanggil file main yang di dalam layout --}}
+@extends('layouts.second') {{-- ini memanggil file main yang di dalam layout --}}
 @section('container')
-<div class="background">
-    <div class="row">
-        <div class="col-3">
-            <h1><b>Forgot</b></h1>
-            <h1><b>the Password?</b></h1>
-            <h4><b>It’s okay mate, you can reset your password</b></h4>
-            <h6>Please enter your valid email that integrated with this account.</h6>
-            <h6>We will send you the intructions.</h6>
+<div class="container">
+    <div class="col-sm-5">
+        <div class="row">
+            <div style="padding-top: 50px">
+                <h1 style="font-family: poppins;"><b>Forgot </b></h1>
+                <h1 style="padding-bottom: 20px;">the Password?</h1>
+                <h3 style="padding-bottom: 40px;">It’s okay mate, you can reset your password</h3>
+                <p style="color: #BFBFBF;">Please enter your valid email that integrated with this account. We will send you the intructions.</p>
+            </div>
             <form class="card-form" method="POST" action="{{ route('ForgetPasswordPost') }}">
                 @csrf
-                <br>
                 <div class="mb-3">
-                    <label for="email" class="form-label"><b>Email</b></label>
+                    <label for="email" class="form-label"><h3>Email</h3></label>
                     <input type="text" class="form-control" id="email" placeholder="Enter your email">
                     @if ($errors->has('email'))
                     <span class="text-danger">{{ $errors->first('email') }}</span>
-                @endif
+                    @endif
                 </div>
-                <br>
-                <button  type="submit"  class="btn btn-5"><b>Reset Password</b></button>
-            </form>
+                    <button  type="submit"  class="btn btn-5"><b>Reset Password</b></button>
+                </form>
+            </div>
+            <div style="padding-top: 60px;">
+                <div>
+                    <a href="/" style="text-decoration: none;"><h2 class="bi bi-arrow-left"> Back</h2></a>
+                </div>
+            </div>
         </div>
-        <div class="col">
-            <img src="/source/img/forgot.png" class="img-3">
+
+        <div class="col-sm-7">
+            <img src="/source/img/forgot.png" class="img-reset-1">
         </div>
     </div>
 </div>

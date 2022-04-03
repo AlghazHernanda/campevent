@@ -28,13 +28,13 @@
     background-color: #ad8b73;
     color: #FAFAFA;
     margin-top: 3px;
-  }
+}
   
-  #Navbar .btn:hover{
+#Navbar .btn:hover{
     background-color:#7c684a;
     color: #fafafa;
-  }
+}
   
-  #Navbar .nav-link:hover{
+#Navbar .nav-link:hover{
     color:  #7c684a;
-  }
+}

@@ -49,57 +49,45 @@ h1 {
   p {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    line-height: 150%;
+    color: #BFBFBF;
   }
   
   h1, h2, h3, h4, p {
     margin: 0;
   }
-  
-  body {
-    background-color: #FFFBE9;
+
+
+.forgot{
+    position: absolute;
+    font-weight: bold;
+}
+
+.form-label{
+    width: 514px;
+    height: 30px;
   }
-  
-  .faq{
-    margin-top: 122px;
-  }
-  
-  .col-sm-6 i{
-    font-size:32px;
-    padding-right:132px;
-  }
-  
-  .container button {
-    text-decoration: none;
-    background-color: #FFFBE9 ;
-    border:none;
-    outline: none;
-  }
-  
-  #accordionExample{
-    padding-left: 132px;
-    padding-right: 132px;
-    padding-top: 80px;
-    padding-bottom: 170px;
-  }
-  
-  #accordionExample .accordion-item{
-    background-color: #FFFBE9;
+
+.btn-4{
+    background-color: #CEAB93;
+    position: absolute;
+    width: 200px;
+    height: 35px;
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
-    border: 0px;
-    padding-bottom: 25px;
-  }
-  
-  #accordionExample .accordion-button{
-    background-color: #FFFBE9;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
-  }
-  
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 10px;
+    border-radius: 10px;
+}
+
+.btn-4:hover{
+  background-color: #E0DDAA;
+}
+
+.img-reset-1{
+  position: absolute;
+  width: 605px;
+  height: 642px;
+  left: 776px;
+  top: 90px;
+}

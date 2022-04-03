@@ -1,5 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container">
+<nav class="navbar navbar-expand-lg" id="Navbar">
     <div class="col-md-6">
       <a class="navbar-brand" href="/"><img class="logo" src="/source/img/logo.png"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,37 +22,33 @@
         </li>
       </ul>
 
-
       <ul class="navbar-nav">
         {{-- kalo udah login, tampilin ini --}}
         @auth
-        {{-- <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Welcom Back, </a> --}}
-        {{-- {{ auth()->user()->name }} --}}
-        {{-- <ul class="dropdown-menu">
+          {{ auth()->user()->name }}
+          <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/dashboard"> <i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
             <li>
-              <form action="/logout" method="post"> --}}
-
-        @csrf
-        {{-- <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
-
+              <form action="/logout" method="post">
+                @csrf
+                <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Logout</button>
               </form>
             </li>
           </ul>
-        </li> --}}
+        </li>
 
         {{-- kalo belum login, tampilkan logo login --}}
         @else
-        {{-- <li class="nav-item">
-          <a href="/login" class="nav-link"><button class="btn">Login</button></a>
-        </li> --}}
+        <li class="nav-item">
+          <a class="nav-link" href="/login"><button class="btn">Login</button></a>
+        </li>
         @endauth
       </ul>
 
     </div>
-  </div>
 </nav>

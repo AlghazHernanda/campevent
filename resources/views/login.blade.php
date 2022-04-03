@@ -1,31 +1,36 @@
-@extends('layouts.main') {{-- ini memanggil file main yang di dalam layout --}}
+@extends('layouts.second') {{-- ini memanggil file main yang di dalam layout --}}
 @section('container')
-<div class="background">
-    <div class="row">
-        <div class="col-1">
-            <h1 style="font-family: poppins;"><b>Login to CampEvent</b></h1>
-            <h6>Please enter your registered email and password</h6>
-            <form class="card-form" method="post" action="/login">
-                @csrf
-                <div class="mb-3">
-                    <label for="username" class="form-label"><b>Username/email</b></label>
-                    <input type="text" class="form-control" name="email" id="username" placeholder="Enter your valid username/email">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label"><b>Password</b></label>
-                    <input type="password" id="inputPassword5" name="password" class="form-control" aria-describedby="passwordHelpBlock">
-                </div>
-                <button class="btn btn-2">Login</button>
-            </form>
+<div class="container" style="padding-top: 120px; padding-left: 120px;">
+    <div class="col-sm-4">
+        <div class="row">
             <div>
-                <a href="/forgot" class="forgot">Forgot Password</a>
-                <p class="atau">Or</p>
+                <h1 style="font-family: poppins; padding-bottom: 10px;"><b>Login to CampEvent</b></h1>
+                <p style="padding-bottom: 30px;">Please enter your registered email and password</h6>
             </div>
-            <a href="/register"><button class="btn btn-3">Register</button></a>
+            <div class="form-login">
+                <label for="username" class="form-label"><b>Username/email</b></label>
+                <input type="text" class="form-control" name="email" id="username" placeholder="Enter your valid username/email">
+            </div>
+            <div class="form-login" style="padding-top: 10px;">
+                <label for="password" class="form-label"><b>Password</b></label>
+                <input type="password" id="inputPassword5" name="password" class="form-control" placeholder="Enter your password" aria-describedby="passwordHelpBlock">
+            </div>
         </div>
-        <div class="col">
-            <img src="/source/img/login.png" class="img-1">
+        <div class="row" style="padding-top: 30px;">
+            <div class="col-sm">
+                <button class="btn btn-2">Login</button>
+            </div>
+            <div class="col-sm" style="padding-left: 15px;">
+                <a href="/register"><button class="btn btn-3">Register</button></a>
+            </div>
+            <br><br>
+            <div style="padding-top: 18px;">
+                <a href="/forgot" class="forgot">Forgot Password ?</a>
+            </div>
         </div>
+    </div>
+    <div class="col-sm-8">
+        <img src="/source/img/login.png" class="img-1" style="padding-left: 50px;">
     </div>
 </div>
 @endsection
