@@ -1,7 +1,7 @@
 <?php
 #app\Http\Controllers\Auth\ForgotPasswordController.php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\auth;
 
 use Carbon\Carbon;
 use App\Models\User;
