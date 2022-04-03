@@ -8,6 +8,23 @@
                 <p style="padding-bottom: 30px;">Please enter your registered email and password</h6>
             </div>
             <form action="/login" method="post">
+                @csrf
+
+                 {{-- menampilkan pesan berhasil registerd yang di ambil dari LoginController --}}
+                    @if (session()->has('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                        
+                    @endif
+
+                    @if (session()->has('loginError'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('loginError') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
             <div class="form-login">
                 <label for="username" class="form-label"><b>Username/email</b></label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="username" 
