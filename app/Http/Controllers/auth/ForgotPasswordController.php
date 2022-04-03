@@ -3,12 +3,13 @@
 
 namespace App\Http\Controllers\auth;
 
-use Carbon\Carbon;
-use App\Models\User;
 
+use Carbon\Carbon;
+
+
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -31,52 +32,63 @@ class ForgotPasswordController extends Controller
 
     public function ForgetPassword()
     {
-        return view('forgot');
+        return view('auth.forgot');
     }
 
     public function ForgetPasswordStore(Request $request)
     {
-
-        $token = Str::random(64);
-        DB::table('password_resets')->insert([
-            'email' => $request->email,
-            'token' => $token,
-            'created_at' => Carbon::now()
+        $request->validate([
+            'email' => 'required|email'
         ]);
 
-        Mail::send('auth.forget-password-email', ['token' => $token], function ($message) use ($request) {
-            $message->to($request->email);
-            $message->from(env('MAIL_FROM_ADDRESS'), env('APP_NAME'));
-            $message->subject('Reset Password');
+        $token = \Str::random(64);
+        \DB::table('password_resets')->insert([
+            'email' => $request->email,
+            'token' => $token,
+            'created_at' => Carbon::now(),
+        ]);
+        $action_link = route('ResetPasswordGet', ['token' => $token, 'email' => $request->email]);
+        $body = "We have received a request to reset the password for <b>Your App Name</b> account associated with " . $request->email . ". You can reset your password by clicking the link below.";
+
+        \Mail::send('email-forgot', ['action_link' => $action_link, 'body' => $body], function ($message) use ($request) {
+            $message->from('noreply@example.com', 'Your App Name');
+            $message->to($request->email, 'Doctor Name')
+                ->subject('Reset Password');
         });
 
-        return back()->with('message', 'We have emailed your password reset link!');
+        return back()->with('success', 'We have e-mailed your password reset link');
     }
 
-    public function ResetPassword($token)
+    public function showResetPassword(Request $request, $token = null)
     {
-        return view('auth.forget-password-link', ['token' => $token]);
+        return view('auth.forget-password-link')->with(['token' => $token, 'email' => $request->email]);
     }
 
     public function ResetPasswordStore(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|exists:users',
-            'password' => 'required|string|min:8|confirmed',
-            'password_confirmation' => 'required'
+            'email' => 'required|email',
+            'password' => 'required|min:5|confirmed',
+            'password_confirmation' => 'required',
         ]);
 
-        $update = User::table('password_resets')->where(['email' => $request->email, 'token' => $request->token])->first();
+        $check_token = \DB::table('password_resets')->where([
+            'email' => $request->email,
+            'token' => $request->token,
+        ])->first();
 
-        if (!$update) {
-            return back()->withInput()->with('error', 'Invalid token!');
+        if (!$check_token) {
+            return back()->withInput()->with('fail', 'Invalid token');
+        } else {
+            User::where('email', $request->email)->update([
+                'password' => Hash::make($request->password)
+            ]);
+
+            \DB::table('password_resets')->where([
+                'email' => $request->email
+            ])->delete();
+
+            return redirect("/login")->with('info', 'Your password has been changed! You can login with new password')->with('verifiedEmail', $request->email);
         }
-
-        $user = DB::where('email', $request->email)->update(['password' => Hash::make($request->password)]);
-
-        // Delete password_resets record
-        DB::table('password_resets')->where(['email' => $request->email])->delete();
-
-        return redirect('/login')->with('message', 'Your password has been successfully changed!');
     }
 }

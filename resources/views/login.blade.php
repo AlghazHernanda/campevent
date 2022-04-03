@@ -7,19 +7,31 @@
                 <h1 style="font-family: poppins; padding-bottom: 10px;"><b>Login to CampEvent</b></h1>
                 <p style="padding-bottom: 30px;">Please enter your registered email and password</h6>
             </div>
+            <form action="/login" method="post">
             <div class="form-login">
                 <label for="username" class="form-label"><b>Username/email</b></label>
-                <input type="text" class="form-control" name="email" id="username" placeholder="Enter your valid username/email">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="username" 
+                placeholder="Enter your valid username/email" value="{{ old('email') }}">
+                @error('email')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="form-login" style="padding-top: 10px;">
                 <label for="password" class="form-label"><b>Password</b></label>
-                <input type="password" id="inputPassword5" name="password" class="form-control" placeholder="Enter your password" aria-describedby="passwordHelpBlock">
+                <input type="password" id="inputPassword5" name="password" class="form-control" 
+                placeholder="Enter your password" aria-describedby="passwordHelpBlock">
+        
             </div>
         </div>
         <div class="row" style="padding-top: 30px;">
             <div class="col-sm">
-                <button class="btn btn-2">Login</button>
+                
             </div>
+            <button class="btn btn-2" type="submit">Login</button>
+        </form>
+        
             <div class="col-sm" style="padding-left: 15px;">
                 <a href="/register"><button class="btn btn-3">Register</button></a>
             </div>
@@ -29,6 +41,7 @@
             </div>
         </div>
     </div>
+
     <div class="col-sm-8">
         <img src="/source/img/login.png" class="img-1" style="padding-left: 50px;">
     </div>

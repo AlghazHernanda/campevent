@@ -10,10 +10,21 @@
                 <p style="color: #BFBFBF;">Please enter your valid email that integrated with this account. We will send you the intructions.</p>
             </div>
             <form class="card-form" method="POST" action="{{ route('ForgetPasswordPost') }}">
+                @if (Session::get('fail'))
+                <div class="alert alert-danger">
+                    {{ Session::get('fail') }}
+                </div>
+            @endif
+
+            @if (Session::get('success'))
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            @endif
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label"><h3>Email</h3></label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter your email">
+                    <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email">
                     @if ($errors->has('email'))
                     <span class="text-danger">{{ $errors->first('email') }}</span>
                     @endif

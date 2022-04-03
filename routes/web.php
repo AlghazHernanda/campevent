@@ -52,7 +52,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/forgot', [ForgotPasswordController::class, 'ForgetPassword']);
 Route::post('/forgot', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordPost');
-Route::get('reset-password/{token}', [ForgotPasswordController::class, 'ResetPassword'])->name('ResetPasswordGet');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPassword'])->name('ResetPasswordGet');
 Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
 
 //register check

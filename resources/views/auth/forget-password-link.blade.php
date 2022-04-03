@@ -8,8 +8,19 @@
                     <div class="card">
                         <div class="card-header">Reset Password</div>
                         <div class="card-body">
-
-                            <form action="{{ route('ResetPasswordPost') }}" method="POST">
+                            {{-- {{ route('ResetPasswordPost') }} --}}
+                            <form action="{{ route('ResetPasswordPost') }}" method="POST"> @if (Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail') }}
+                                </div>
+                            @endif
+        
+                            @if (Session::get('success'))
+                                <div class="alert alert-success">
+                                    {{ Session::get('success') }}
+                                </div>
+                            @endif
+        
                                 @csrf
                                 <input type="hidden" name="token" value="{{ $token }}">
 
