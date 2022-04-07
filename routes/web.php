@@ -52,7 +52,11 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/verify', [RegisterController::class, 'verify'])->name('verify');
+//routing update profile
+Route::get('/profile', [RegisterController::class, 'getProfile']);
+Route::post('/profile', [RegisterController::class, 'updateProfile']);
 
+//forgotpassword
 Route::get('/forgot', [ForgotPasswordController::class, 'ForgetPassword']);
 Route::post('/forgot', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordPost');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPassword'])->name('ResetPasswordGet');

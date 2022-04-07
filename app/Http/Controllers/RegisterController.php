@@ -114,4 +114,41 @@ class RegisterController extends Controller
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+    public function getProfile()
+    {
+        return view("coba_backend.profile");
+    }
+
+    public function updateProfile(Request $request, User $user)
+    {
+        $request->validate([
+            'fullname' => 'required|max:255', //wajib diisi | maksimal 255
+            'email' => 'required|email:dns', //|unique:users, note : nanti cek lagi 
+            'university' => 'max:255',
+            'username' =>  'max:255',
+        ]);
+
+
+        $user->university = $request->university;
+        $user->username = $request->username;
+
+        $save = $user->update();
+
+        if ($save) {
+            return redirect('/')->with('success', 'Post has Been Updated');
+            # code...
+        } else {
+            return redirect()->back();
+        }
+    }
 }
