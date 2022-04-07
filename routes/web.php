@@ -49,6 +49,7 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 //routing register
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/verify', [RegisterController::class, 'verify'])->name('verify');
 
 Route::get('/forgot', [ForgotPasswordController::class, 'ForgetPassword']);
 Route::post('/forgot', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordPost');

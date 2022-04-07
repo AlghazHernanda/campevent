@@ -7,6 +7,18 @@
             <h3 style="color: #BFBFBF; padding-bottom: 30px;">Your journey will begin from <span style="color: #F7CC74;">here</span></h3>
             <form class="card-form" method="post" action="/register">
                 @csrf
+
+                @if (Session::get('success'))
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+                @endif
+                @if (Session::get('fail'))
+                <div class="alert alert-danger">
+                    {{ Session::get('fail') }}
+                </div>
+                @endif   
+
                 <div class="r1">
                     <div>
                         <label for="fullname" class="form-label"><b>Full Name</b></label>

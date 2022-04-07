@@ -10,7 +10,7 @@
             <form action="/login" method="post">
                 @csrf
 
-                 {{-- menampilkan pesan berhasil registerd yang di ambil dari LoginController --}}
+                 {{-- menampilkan pesan berhasil registerd yang di ambil dari LoginController
                     @if (session()->has('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ session('success') }}
@@ -24,11 +24,25 @@
                         {{ session('loginError') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
+                    @endif --}}
+
+                    @if (Session::get('fail'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('fail') }}
+                        </div>
                     @endif
+
+                    @if (Session::get('info'))
+                        <div class="alert alert-info">
+                            {{ Session::get('info') }}
+                        </div>
+                    @endif
+
             <div class="form-login">
                 <label for="username" class="form-label"><b>Username/email</b></label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="username" 
-                placeholder="Enter your valid username/email" value="{{ old('email') }}">
+                placeholder="Enter your valid username/email" 
+                value="{{ Session::get('verifiedEmail') ? Session::get('verifiedEmail') : old('email') }}">
                 @error('email')
                 <div class="invalid-feedback">
                     {{ $message }}

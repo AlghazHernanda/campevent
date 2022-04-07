@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use App\Models\VerifyUser;
 
 class RegisterController extends Controller
 {
@@ -16,8 +18,33 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
 
+        // // mengvalidasi data nya agar ga ngasal
+        // $validatedData = $request->validate([
+        //     'fullname' => 'required|max:255', //wajib diisi | maksimal 255
+        //     'email' => 'required|email:dns|unique:users',
+        //     'password' => 'required|min:5|max:255|confirmed',
+        //     'password_confirmation' => 'required'
+
+        // ]);
+
+        // if ($validatedData['password'] == $validatedData['password_confirmation']) {
+        //     //$validatedData['password'] = bcrypt($validatedData['password']); //di enkripsi dulu
+        //     $validatedData['password'] = Hash::make($validatedData['password']); //bisa juga pake cara yang ini
+        //     $validatedData['password_confirmation'] = $validatedData['password'];
+
+        //     User::create($validatedData); //masukin ke database
+
+        //     //$request->session()->flash('success', 'Registration successfull! please login'); //nampilin pesan sukses di halaman login
+
+        //     return redirect('/login')->with('success', 'Registration successfull! please login'); //sama aja kyk yg di atas, ini lebih simpel
+        // } else {
+        //     return back()->with('RegisterError', 'Register Failed');
+        // }
+
+
+        // register menggunakan verify email
         // mengvalidasi data nya agar ga ngasal
-        $validatedData = $request->validate([
+        $request->validate([
             'fullname' => 'required|max:255', //wajib diisi | maksimal 255
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255|confirmed',
@@ -25,18 +52,66 @@ class RegisterController extends Controller
 
         ]);
 
-        if ($validatedData['password'] == $validatedData['password_confirmation']) {
-            //$validatedData['password'] = bcrypt($validatedData['password']); //di enkripsi dulu
-            $validatedData['password'] = Hash::make($validatedData['password']); //bisa juga pake cara yang ini
-            $validatedData['password_confirmation'] = $validatedData['password'];
 
-            User::create($validatedData); //masukin ke database
 
-            //$request->session()->flash('success', 'Registration successfull! please login'); //nampilin pesan sukses di halaman login
+        $user = new User();
+        $user->fullname = $request->fullname;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->password_confirmation = $user->password;
+        $save = $user->save();
+        $last_id = $user->id; //mengambil id user
 
-            return redirect('/login')->with('success', 'Registration successfull! please login'); //sama aja kyk yg di atas, ini lebih simpel
+        $token = $last_id . hash('sha256', \Str::random(120));
+        $verifyURL = route('verify', ['token' => $token, 'service' => 'Email_verification']);
+
+        VerifyUser::create([
+            'user_id' => $last_id,
+            'token' => $token,
+        ]);
+
+        $message = 'Dear <b>' . $request->fullname . '</b>';
+        $message .= 'Thanks for signing up, we just need you to verify your email address to complete setting up your account.';
+
+        $mail_data = [
+            'recipient' => $request->email,
+            'fromEmail' => $request->email,
+            'fromName' => $request->fullname,
+            'subject' => 'Email Verification',
+            'body' => $message,
+            'actionLink' => $verifyURL,
+        ];
+
+        // ddd($mail_data);
+
+        \Mail::send('email-template', $mail_data, function ($message) use ($mail_data) {
+            $message->to($mail_data['recipient'])
+                ->from($mail_data['fromEmail'], $mail_data['fromName'])
+                ->subject($mail_data['subject']);
+        });
+
+        if ($save) {
+            return redirect()->back()->with('success', 'You need to verify your account. We have sent you an activation link, please check your email.');
         } else {
-            return back()->with('RegisterError', 'Register Failed');
+            return redirect()->back()->with('fail', 'Something went wrong, failed to register');
+        }
+    }
+
+    public function verify(Request $request)
+    {
+        $token = $request->token;
+        $verifyUser = VerifyUser::where('token', $token)->first();
+        if (!is_null($verifyUser)) {
+            $user = $verifyUser->user;
+
+            if (!$user->email_verified) {
+                $verifyUser->user->email_verified = 1;
+                $verifyUser->user->save();
+
+                return redirect('/login')->with('info', 'Your email is verified successfully. You can now login')->with('verifiedEmail', $user->email);
+            } else {
+                return redirect('/login')->with('info', 'Your email is already verified. You can now login')->with('verifiedEmail', $user->email);
+            }
         }
     }
 }
