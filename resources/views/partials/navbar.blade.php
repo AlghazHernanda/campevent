@@ -26,8 +26,8 @@
         {{-- kalo udah login, tampilin ini --}}
         @auth
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Welcom Back, </a> --}}
-          {{ auth()->user()->name }}
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Welcom Back, {{ auth()->user()->fullname }} </a> 
+         
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/dashboard"> <i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a></li>
             <li>

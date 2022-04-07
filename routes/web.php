@@ -44,6 +44,8 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 //login authenticate
 Route::post('/login', [LoginController::class, 'authenticate']);
 
+Route::post('/logout', [LoginController::class, 'logout']);
+
 
 
 //routing register
