@@ -26,9 +26,9 @@
                     </div>
                     @endif --}}
 
-                    @if (Session::get('fail'))
+                    @if (Session::get('loginError'))
                         <div class="alert alert-danger">
-                            {{ Session::get('fail') }}
+                            {{ Session::get('loginError') }}
                         </div>
                     @endif
 
