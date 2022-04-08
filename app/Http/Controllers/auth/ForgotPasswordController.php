@@ -62,7 +62,7 @@ class ForgotPasswordController extends Controller
     public function showResetPassword(Request $request, $token = null)
     {
         // return view('auth.forget-password-link')->with(['token' => $token, 'email' => $request->email]);
-        return view('reset')->with(['token' => $token, 'email' => $request->email]);
+        return view('auth.reset')->with(['token' => $token, 'email' => $request->email]);
     }
 
     public function ResetPasswordStore(Request $request)
@@ -89,7 +89,8 @@ class ForgotPasswordController extends Controller
                 'email' => $request->email
             ])->delete();
 
-            return redirect("/login")->with('info', 'Your password has been changed! You can login with new password')->with('verifiedEmail', $request->email);
+            // return redirect("/login")->with('info', 'Your password has been changed! You can login with new password')->with('verifiedEmail', $request->email);
+            return redirect("/resetcheck")->with('verifiedEmail', $request->email);
         }
     }
 }
