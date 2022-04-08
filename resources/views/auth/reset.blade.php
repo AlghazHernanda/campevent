@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -58,4 +58,4 @@
 	<script src="bootstrap/js/bootstrap.js"></script>
 	<script src="js/my-login.js"></script>
 </body>
-</html>
+</html> --}}

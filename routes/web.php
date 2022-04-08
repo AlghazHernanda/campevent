@@ -43,7 +43,7 @@ Route::get('resetcheck', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 //login authenticate
 Route::post('/login', [LoginController::class, 'authenticate']);
-
+//logout
 Route::post('/logout', [LoginController::class, 'logout']);
 
 
@@ -56,8 +56,10 @@ Route::get('/registercheck', [RegisterController::class, 'registercheck']);
 Route::get('/resendEmail', [RegisterController::class, 'resendEmail']);
 
 //routing update profile
-Route::get('/profile', [RegisterController::class, 'getProfile']);
-Route::put('/profile', [RegisterController::class, 'update']);
+Route::get('/profile', [RegisterController::class, 'getProfile'])->middleware('auth'); //hanya bisa diakses kalo udah login
+Route::put('/profile', [RegisterController::class, 'update'])->middleware('auth');;
+
+
 
 //forgotpassword
 Route::get('/forgot', [ForgotPasswordController::class, 'ForgetPassword']);

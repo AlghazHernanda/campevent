@@ -48,7 +48,7 @@ class ForgotPasswordController extends Controller
             'created_at' => Carbon::now(),
         ]);
         $action_link = route('ResetPasswordGet', ['token' => $token, 'email' => $request->email]);
-        $body = "We have received a request to reset the password for <b>Your App Name</b> account associated with " . $request->email . ". You can reset your password by clicking the link below.";
+        $body = "We have received a request to reset the password for <b>Campevent</b> account associated with " . $request->email . ". You can reset your password by clicking the link below.";
 
         \Mail::send('email-forgot', ['action_link' => $action_link, 'body' => $body], function ($message) use ($request) {
             $message->from('noreply@example.com', 'Your App Name');
@@ -61,7 +61,8 @@ class ForgotPasswordController extends Controller
 
     public function showResetPassword(Request $request, $token = null)
     {
-        return view('auth.forget-password-link')->with(['token' => $token, 'email' => $request->email]);
+        // return view('auth.forget-password-link')->with(['token' => $token, 'email' => $request->email]);
+        return view('reset')->with(['token' => $token, 'email' => $request->email]);
     }
 
     public function ResetPasswordStore(Request $request)
