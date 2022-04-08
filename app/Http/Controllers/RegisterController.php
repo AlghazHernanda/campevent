@@ -124,31 +124,30 @@ class RegisterController extends Controller
 
 
 
-    public function getProfile()
+    public function getProfile(User $user)
     {
-        return view("coba_backend.profile");
+        return view("coba_backend.profile", [
+            'user' => $user,
+        ]);
     }
 
-    public function updateProfile(Request $request, User $user)
+    public function update(Request $request)
     {
         $request->validate([
             'fullname' => 'required|max:255', //wajib diisi | maksimal 255
             'email' => 'required|email:dns', //|unique:users, note : nanti cek lagi 
             'university' => 'max:255',
-            'username' =>  'max:255',
+            'username' =>  ['max:255', 'unique:users,username,' . auth()->id()], //agar nama username tidak sama dengan yg lain, --
+            //--tapi kalo untuk user itu sendiri gamau ganti username jadnya gakenapa kenapa
         ]);
 
+        auth()->user()->update([
+            'fullname' => $request->fullname,
+            'email' => $request->email,
+            'university' => $request->university,
+            'username' =>  $request->username,
+        ]);
 
-        $user->university = $request->university;
-        $user->username = $request->username;
-
-        $save = $user->update();
-
-        if ($save) {
-            return redirect('/')->with('success', 'Post has Been Updated');
-            # code...
-        } else {
-            return redirect()->back();
-        }
+        return back()->with('success', 'your profile has been updated');
     }
 }

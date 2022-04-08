@@ -5,6 +5,8 @@
         <div class="col-sm-6">
             
             <form class="card-form" method="post" action="/profile">
+                @method('put')
+                
                 @csrf
 
                 @if (Session::get('success'))
