@@ -12,12 +12,25 @@
             <p>
                 Please check your email to verify your registration
             </p>
+            {{-- @if (Session::get('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+            @endif
+            @if (Session::get('fail'))
+            <div class="alert alert-danger">
+                {{ Session::get('fail') }}
+            </div>
+            @endif    --}}
+
         </div>
         <div class="rc-1"> 
-            <p>Didn’t get the email?</p>
+            {{-- <p>Didn’t get the email?</p> --}}
         </div>
         <div class="rc-2">
-            <a class="btn btn-6" href="#">Resend Email</a>
+            {{-- <form action="/login" method="get">
+            <button class="btn btn-6"><b>Resend Email</b></button>
+        </form> --}}
         </div>
     </div>
 </div>

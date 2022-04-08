@@ -91,11 +91,18 @@ class RegisterController extends Controller
         });
 
         if ($save) {
-            return redirect()->back()->with('success', 'You need to verify your account. We have sent you an activation link, please check your email.');
+            return redirect('/registercheck')->with('success', 'You need to verify your account. We have sent you an activation link, please check your email.');
+            // return redirect()->back()->with('success', 'You need to verify your account. We have sent you an activation link, please check your email.');
         } else {
             return redirect()->back()->with('fail', 'Something went wrong, failed to register');
         }
     }
+
+    public function registercheck()
+    {
+        return view('registercheck');
+    }
+
 
     public function verify(Request $request)
     {
@@ -115,9 +122,9 @@ class RegisterController extends Controller
         }
     }
 
-
-
-
+    public function resendEmail(Request $request)
+    {
+    }
 
 
 

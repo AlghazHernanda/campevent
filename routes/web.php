@@ -52,6 +52,8 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/verify', [RegisterController::class, 'verify'])->name('verify');
+Route::get('/registercheck', [RegisterController::class, 'registercheck']);
+Route::get('/resendEmail', [RegisterController::class, 'resendEmail']);
 
 //routing update profile
 Route::get('/profile', [RegisterController::class, 'getProfile']);
@@ -63,7 +65,7 @@ Route::post('/forgot', [ForgotPasswordController::class, 'ForgetPasswordStore'])
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPassword'])->name('ResetPasswordGet');
 Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
 
-//register check
-Route::get('registercheck', function () {
-    return view('registercheck');
-});
+// //register check
+// Route::get('registercheck', function () {
+//     return view('registercheck');
+// });
