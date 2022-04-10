@@ -55,9 +55,14 @@ Route::get('/verify', [RegisterController::class, 'verify'])->name('verify');
 Route::get('/registercheck', [RegisterController::class, 'registercheck']);
 Route::get('/resendEmail', [RegisterController::class, 'resendEmail']);
 
-//routing update profile
+//routing update profile di dalam Registercontroller
 Route::get('/profile', [RegisterController::class, 'getProfile'])->middleware('auth'); //hanya bisa diakses kalo udah login
-Route::put('/profile', [RegisterController::class, 'update'])->middleware('auth');;
+Route::put('/profile', [RegisterController::class, 'update'])->middleware('auth');
+
+//routing change passworod di dalam Registercontroller
+Route::get('/change', [RegisterController::class, 'getChange'])->middleware('auth');
+Route::put('/change', [RegisterController::class, 'updateChange'])->middleware('auth');
+
 
 
 

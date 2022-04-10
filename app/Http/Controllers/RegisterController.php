@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\VerifyUser;
+use Illuminate\Validation\ValidationException;
 
 class RegisterController extends Controller
 {
+    //halaman register dan simpan data register
     public function index()
     {
         return view('register');
     }
-
     public function store(Request $request)
     {
 
@@ -103,7 +104,7 @@ class RegisterController extends Controller
         return view('registercheck');
     }
 
-
+    //verify email send
     public function verify(Request $request)
     {
         $token = $request->token;
@@ -130,7 +131,7 @@ class RegisterController extends Controller
 
 
 
-
+    //edit dan update profile
     public function getProfile(User $user)
     {
         return view("coba_backend.profile", [
@@ -156,5 +157,31 @@ class RegisterController extends Controller
         ]);
 
         return back()->with('success', 'your profile has been updated');
+    }
+
+
+
+
+
+    public function getChange()
+    {
+        return view('coba_backend.change');
+    }
+    public function updateChange(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|min:5|max:255|confirmed',
+        ]);
+
+        //jika current password  sama dengan password user sekarang
+        if (Hash::check($request->current_password, auth()->user()->password)) {
+            auth()->user()->update(['password' => Hash::make($request->password)]);
+            return back()->with('success', 'your password has been updated');
+        }
+
+        throw ValidationException::withMessages([
+            'current_password' => 'your current password does not match with our record',
+        ]);
     }
 }

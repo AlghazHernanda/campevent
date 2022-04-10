@@ -66,6 +66,9 @@
                 </div>
                 <button class="btn btn-1"><b>save</b></button>
             </form>
+            <form action="/change" method="get">
+                <button class="btn btn-1"><b>Change Password</b></button>
+            </form>
             <div style="padding-top: 17px;">
                 <h4>Already have an account? <a href="/login" style="color: #F7CC74;"> login </a></h4>
             </div>
