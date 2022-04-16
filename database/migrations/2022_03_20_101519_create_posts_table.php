@@ -18,10 +18,13 @@ class CreatePostsTable extends Migration
             $table->foreignId('category_id'); //foreign key ke table category
             $table->foreignId('user_id');
             $table->string('title');
+            $table->string('eventType');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
-            $table->text('excerpt');
-            $table->text('body');
+            $table->text('desc');
+            $table->date('date');
+            $table->string('speaker');
+            $table->string('price');
             $table->timestamp('published_at')->nullable(); //buat isi postnya di publish kapan, dan default nya 0
             $table->timestamps();
         });
