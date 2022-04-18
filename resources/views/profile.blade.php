@@ -12,7 +12,7 @@
                 <div class="card shadow" style="background-color: #F3F4F8; border-radius: 20px;">
                     <div class="card-left">
                         <h2 class="h2-profile">Personal Information</h2>
-                        <form class="card-form" method="post" action="/profile">
+                        <form class="card-form" method="post" action="/profile" enctype="multipart/form-data">
                             @method('put')
                 
                             @csrf
@@ -31,7 +31,11 @@
                         <div class="row">
                             <div class="col-sm-2">
                                 <div class="rounded mb-3 mb-md-0" style="padding-top: 28px;">
-                                    <div class="image"> <img class="rounded-circle" src="bariz1.png" width="120" height="120px"> </div>
+                                    <div class="image"> 
+                                        <img class="rounded-circle img-preview img-fluid" src="bariz1.png" width="120" height="120px">
+                                        <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()"> 
+                                        {{--  --}}
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -111,5 +115,39 @@
             <a href="#"><button class="btn btn-5">Logout</button></a>
         </div>
     </div>
+
+    <script>
+        const title = document.querySelector('#title');
+        const slug = document.querySelector('#slug');
+
+        title.addEventListener('change', function(){
+          fetch("/dashboard/post/checkSlug?title=" + title.value)
+                .then(response => response.json())
+                .then(data => slug.value = data.slug)
+
+        });
+
+        // untuk mematikan fitur file upload nya trix editor
+        document.addEventListener('trix-file-accept', function(e){
+          e.preventDefault();
+        })
+
+
+        //untuk menampilkan image preview
+        function previewImage(){
+          const image = document.querySelector('#image');
+          const imgPreview = document.querySelector('.img-preview');
+
+          imgPreview.style.display = 'block';
+
+          const oFReader = new FileReader();
+          oFReader.readAsDataURL(image.files[0]);
+
+          oFReader.onload = function(oFREvent){
+            imgPreview.src = oFREvent.target.result;
+          }
+
+        }
+    </script>
 
 @endsection
