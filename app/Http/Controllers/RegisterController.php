@@ -134,9 +134,7 @@ class RegisterController extends Controller
     //edit dan update profile
     public function getProfile(User $user)
     {
-        return view("coba_backend.profile", [
-            'user' => $user,
-        ]);
+        return view("profile");
     }
 
     public function update(Request $request)
@@ -165,7 +163,7 @@ class RegisterController extends Controller
 
     public function getChange()
     {
-        return view('coba_backend.change');
+        return view('password_setting');
     }
     public function updateChange(Request $request)
     {
