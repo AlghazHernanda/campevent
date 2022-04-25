@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="{{asset('source/css/faq.css')}}">
   <link rel="stylesheet" href="{{asset('source/css/footer.css')}}">
   <link rel="stylesheet" href="{{asset('source/css/about.css')}}">
+  <link rel="stylesheet" href="{{asset('source/css/registerevent.css')}}">
+  <link rel="stylesheet" href="{{asset('source/css/wishlist.css')}}">
 
   <title>CampEvent</title>
 </head>
