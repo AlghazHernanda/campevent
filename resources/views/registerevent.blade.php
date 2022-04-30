@@ -27,7 +27,7 @@
                       <div class="col-sm-6">
                         <div class="form-event">
                             <label for="#" class="form-label"><h2 class="h2-form">Event Title</h2></label>
-                            <input type="text" class="fc-sc1 form-control" name="#" id="#" placeholder="Enter your event title">
+                            <input type="text" class="fc-sc1 form-control" name="title" id="title" placeholder="Enter your event title">
                         </div>
                       </div>
                       <div class="col-sm-6">
@@ -36,11 +36,11 @@
                             <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" style="margin-left: 35px;" data-bs-toggle="dropdown" aria-expanded="false">
                                 Select Theme
                             </button>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Tech</a></li>
-                                <li><a class="dropdown-item" href="#">Sport</a></li>
-                                <li><a class="dropdown-item" href="#">Social</a></li>
-                              </ul>
+                              <select name="eventTheme" class="dropdown-menu"  aria-labelledby="dropdownMenuButton1">
+                                <option value="Tech"> Tech </option>
+                                <option value="Sport"> Sport </option>
+                                <option value="Social"> Social </option>
+                              </select>
                           </div>
                       </div>
                       <!-- Section 1 -->
@@ -64,9 +64,10 @@
                           <form class="col-sm-4">
                             <div class="form-check">
                               <input type="checkbox" class="form-check-input" id="paid" name="hobby" />
+                              {{-- <input type="checkbox" name='colour[]' value="Red"> paid <br/> --}}
                               <label class="form-check-label" for="paid">
                                   <div class="row text-card" style="margin-left: 10px;">
-                                    <div class="col status-card">Paid</div>
+                                    
                                     <div class="col info-card">offline</div>
                                   </div>
                               </label>
@@ -103,14 +104,14 @@
                       <div class="col-sm-6">
                         <div class="form-description">
                             <label for="#" class="form-label"><h2 class="h2-form">Event Description</h2></label>
-                            <textarea type="text" class="fc-sc3 form-control" name="#" id="#" placeholder="Drop the description of your event"></textarea>
+                            <textarea type="text" class="fc-sc3 form-control" name="desc" id="#" placeholder="Drop the description of your event"></textarea>
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <h2 class="h2-form" style="padding-bottom: 9px; padding-left: 35px;">Date</h2>
                         <div class="input-group">
                           <i class="bi bi-calendar-date input-group-text"></i>
-                          <input type="text" class="datepicker form-control" placeholder="DD-MM-YYYY">
+                          <input type="text" name="date" class="datepicker form-control" placeholder="DD-MM-YYYY">
                           </div>
                       </div>
                       <!-- Section 3 -->
@@ -134,13 +135,13 @@
                         <div class="col-sm-7">
                           <div class="form-description">
                               <label for="#" class="form-label"><h2 class="h2-form">Speaker</h2></label>
-                              <textarea type="text" class="fc-sc3 form-control" name="#" id="#" placeholder="Please insert event speaker with list"></textarea>
+                              <textarea type="text" name="speaker" class="fc-sc3 form-control" name="#" id="#" placeholder="Please insert event speaker with list"></textarea>
                           </div>
                         </div>
                         <div class="col-sm-5">
                           <div class="form-event">
                             <label for="#" class="form-label"><h2 class="h2-form">Price (in rupiah)</h2></label>
-                            <input type="text" class="fc-sc5 form-control" name="#" id="#" placeholder="Rp">
+                            <input type="text" name="price" class="fc-sc5 form-control" name="#" id="#" placeholder="Rp">
                           </div>
                         </div>
                       </div>

@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->foreignId('user_id');
             $table->string('title');
             $table->string('eventType');
+            $table->string('eventTheme');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
             $table->text('desc');
