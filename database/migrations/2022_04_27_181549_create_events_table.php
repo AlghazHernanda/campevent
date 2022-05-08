@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->string('title');
             $table->string('eventType');
             $table->string('eventTheme');
-            $table->string('slug')->unique();
+            // $table->string('slug')->unique();
             $table->string('image')->nullable();
             $table->text('desc');
             $table->date('date');

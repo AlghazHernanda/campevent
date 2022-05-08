@@ -14,7 +14,6 @@ class DasboardEventController extends Controller
      */
     public function index()
     {
-        return view('registerevent');
     }
 
     /**
@@ -24,7 +23,7 @@ class DasboardEventController extends Controller
      */
     public function create()
     {
-        //
+        return view('registerevent');
     }
 
     /**
@@ -35,7 +34,44 @@ class DasboardEventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'eventType' => 'required',
+            'eventTheme' => 'required',
+            // 'slug' => 'required|unique:posts',
+            'image' => 'image|file|max:1024', //maksudnya maksimal file nya 1024 kilobyte ata 1 mb
+            'desc' => 'required',
+            'date' => 'required',
+            'speaker' => 'required',
+            'price' => 'required',
+            // 'published_at' => 'required',
+        ]);
+
+        //logika untuk multi checkbox
+        if (!empty($request->input('eventTheme'))) {
+            $validatedData['eventTheme'] = join(',', $request->input('eventTheme'));
+        } else {
+            $validatedData['eventTheme'] = '';
+        }
+
+        //jika ada gambar yang di upload
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images'); //maka simpan di dalam storage/app/post-images
+        }
+
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['category_id'] = auth()->user()->id;
+        //$validatedData['published_at'] = $validatedData['created_at'];
+
+
+        //dd($validatedData);
+
+
+
+        Event::create($validatedData);
+
+        return redirect('/')->with('success', 'New Post has Been Added');
     }
 
     /**

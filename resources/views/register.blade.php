@@ -5,7 +5,7 @@
         <div class="col-sm-6">
             <h1 style="padding-bottom: 10px;">Register your account</h1>
             <h3 style="color: #BFBFBF; padding-bottom: 30px;">Your journey will begin from <span style="color: #F7CC74;">here</span></h3>
-            <form class="card-form" method="post" action="/register">
+            <form class="card-form" method="post" action="/register" >
                 @csrf
 
                 @if (Session::get('success'))
