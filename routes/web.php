@@ -5,6 +5,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\auth\ForgotPasswordController;
 use App\Http\Controllers\DasboardEventController;
+use App\Http\Controllers\WhistlistController;
+use App\Http\Controllers\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +82,9 @@ Route::post('/RegisterEvent', [DasboardEventController::class, 'store'])->middle
 Route::get('/editEvent/{event:id}', [DasboardEventController::class, 'edit'])->middleware('auth');
 Route::put('/editEvent/{event:id}', [DasboardEventController::class, 'update'])->middleware('auth');
 Route::delete('/deleteEvent/{event:id}', [DasboardEventController::class, 'destroy'])->middleware('auth');
+
+//whistlist
+Route::get('/wishlist', [WishlistController::class, 'index'])->middleware('auth');
 
 // //register check
 // Route::get('registercheck', function () {
