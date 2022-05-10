@@ -11,7 +11,7 @@ class EventType extends Model
 
     protected $guarded = ['id']; //biar bisa mash input
 
-    public function event()
+    public function events()
     {
         // 1 katerogi bisa dimiliki oleh banyak post
         return $this->hasMany(Event::class);

@@ -31,7 +31,7 @@
         <tr>
           <td>{{ $loop->iteration }}</td> {{-- bawaan dari blade untuk membuat iterasi angka lebih gampang, mulai dari 1 --}}
           <td>{{ $event->title }}</td>
-          <td>{{ $event->eventType }}</td>
+          <td>{{ $event->eventTypeTo}}</td>
           <td>
               <a href="/dashboard/events/{{ $event->id }}" class="badge bg-info"><span data-feather="eye"></span></a>
               <a href="/dashboard/events/{{ $event->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
