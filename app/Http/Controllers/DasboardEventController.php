@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\EventType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DasboardEventController extends Controller
 {
@@ -14,6 +16,9 @@ class DasboardEventController extends Controller
      */
     public function index()
     {
+        return view('coba_backend.event', [
+            'events' => Event::where('user_id', auth()->user()->id)->get() //dimana user_id nya sama kyk user id yang login
+        ]);
     }
 
     /**
@@ -23,7 +28,9 @@ class DasboardEventController extends Controller
      */
     public function create()
     {
-        return view('registerevent');
+        return view('registerevent', [
+            'eventTypes' => EventType::all()
+        ]);
     }
 
     /**
@@ -40,7 +47,7 @@ class DasboardEventController extends Controller
             'eventType' => 'required',
             'eventTheme' => 'required',
             // 'slug' => 'required|unique:posts',
-            'image' => 'image|file|max:1024', //maksudnya maksimal file nya 1024 kilobyte ata 1 mb
+            'image' => 'image|file|max:1024|required', //maksudnya maksimal file nya 1024 kilobyte ata 1 mb
             'desc' => 'required',
             'date' => 'required',
             'speaker' => 'required',
@@ -61,7 +68,7 @@ class DasboardEventController extends Controller
         }
 
         $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['category_id'] = auth()->user()->id;
+        $validatedData['category_id'] = $validatedData['eventType'];
         //$validatedData['published_at'] = $validatedData['created_at'];
 
 
@@ -71,7 +78,7 @@ class DasboardEventController extends Controller
 
         Event::create($validatedData);
 
-        return redirect('/')->with('success', 'New Post has Been Added');
+        return redirect('/')->with('success', 'New Event has Been Added');
     }
 
     /**
@@ -93,7 +100,10 @@ class DasboardEventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        return view('coba_backend.editEvent', [
+            'event' => $event,
+            'eventTypes' => EventType::all()
+        ]);
     }
 
     /**
@@ -105,7 +115,43 @@ class DasboardEventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'eventType' => 'required',
+            'eventTheme' => 'required',
+            // 'slug' => 'required|unique:posts',
+            'image' => 'image|file|max:1024|required', //maksudnya maksimal file nya 1024 kilobyte ata 1 mb
+            'desc' => 'required',
+            'date' => 'required',
+            'speaker' => 'required',
+            'price' => 'required',
+            // 'published_at' => 'required',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        //logika untuk multi checkbox
+        if (!empty($request->input('eventTheme'))) {
+            $validatedData['eventTheme'] = join(',', $request->input('eventTheme'));
+        } else {
+            $validatedData['eventTheme'] = '';
+        }
+
+        //jika ada gambar yang di upload
+        if ($request->file('image')) {
+            // ika ada image lama, maka mendelete image lama
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('post-images'); //maka simpan di dalam post-images
+        }
+
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['category_id'] = $validatedData['eventType'];
+
+        Event::where('id', $event->id)->update($validatedData);
+
+        return redirect('/')->with('success', 'Event has Been Updated');
     }
 
     /**
@@ -116,6 +162,12 @@ class DasboardEventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        //untuk mendelete image lama
+        if ($event->image) {
+            Storage::delete($event->image);
+        }
+        Event::destroy($event->id);
+
+        return redirect('/')->with('success', 'event has Been deleted');
     }
 }

@@ -3,21 +3,11 @@
 <div class="container-fluid">
         <div class="row">
 
-          <div class="kiri">
-              <div class="text-kiri">
-                <h1 class="h1-kiri">Promote with Us!</h1>
-                <center>
-                  <h2 style="padding-top: 28px;">Active</h2>
-                  <h2 style="padding-left: 345px;">Productive</h2>
-                </center>
-              </div>
-              <div>
-                <img src="hero.png" class="img-hero" style="">
-            </div>
-          </div>
+    
 
           <div class="kanan">
-          <form action="/RegisterEvent" method="post" enctype="multipart/form-data">
+          <form action="/editEvent/{{ $event->id }}" method="post" enctype="multipart/form-data">
+            @method('put')
             @csrf
          
               <div class="text-kanan"> 
@@ -30,7 +20,8 @@
                       <div class="col-sm-6">
                         <div class="form-event">
                             <label for="#" class="form-label"><h2 class="h2-form">Event Title</h2></label>
-                            <input type="text" class="fc-sc1 form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Enter your event title">
+                            <input type="text" class="fc-sc1 form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Enter your event title"
+                            value="{{ old('title', $event->title) }}">
                             @error('title')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -127,7 +118,8 @@
                       <div class="col-sm-6">
                         <div class="form-description">
                             <label for="#" class="form-label"><h2 class="h2-form">Event Description</h2></label>
-                            <textarea type="text" class="fc-sc3 form-control @error('desc') is-invalid @enderror" name="desc" id="#" placeholder="Drop the description of your event"></textarea>
+                            <textarea type="text" class="fc-sc3 form-control @error('desc') is-invalid @enderror" name="desc" id="#" 
+                             >{{ $event->desc }}</textarea>
                             @error('desc')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -139,7 +131,8 @@
                         <h2 class="h2-form" style="padding-bottom: 9px; padding-left: 35px;">Date</h2>
                         <div class="input-group">
                           <i class="bi bi-calendar-date input-group-text"></i>
-                          <input type="date" name="date" class="datepicker form-control @error('date') is-invalid @enderror" placeholder="DD-MM-YYYY">
+                          <input type="date" name="date" class="datepicker form-control @error('date') is-invalid @enderror" 
+                          value="{{ old('date', $event->date) }}" placeholder="DD-MM-YYYY">
                           @error('date')
                           <div class="invalid-feedback">
                               {{ $message }}
@@ -153,9 +146,19 @@
                       <div>
                         <h2 class="h2-form" style="padding-top: 19px; padding-left: 0px;">Brochure</h2>
                         <div class="row" style="padding-left: 113px;">
+                        <input type="hidden" name="oldImage" value="{{ $event->image }}">
                           {{-- <img class="img-preview img-fluid mb-3 col-sm-5">
                           <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()"> --}}
-                          <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
+                           {{-- untuk kondisi misalnya ada gambar atau tidak --}}
+
+                          {{-- @if ($event->image)
+                          <img src="{{ asset('storage/' . $event->image) }}" class="img-preview img-fluid mb-3 col-sm-2 d-block">
+                                
+                          @else
+                          <img class="img-preview img-fluid mb-3 col-sm-5">
+                          @endif --}}
+
+                          <input class="form-control @error('image') is-invalid @enderror"  type="file" id="image" name="image">
                           @error('image')
                           <div class="invalid-feedback">
                               {{ $message }}
@@ -176,7 +179,8 @@
                         <div class="col-sm-7">
                           <div class="form-description">
                               <label for="#" class="form-label"><h2 class="h2-form">Speaker</h2></label>
-                              <textarea type="text" name="speaker" class="fc-sc3 form-control @error('speaker') is-invalid @enderror" name="speaker" id="#" placeholder="Please insert event speaker with list"></textarea>
+                              <textarea type="text" name="speaker" class="fc-sc3 form-control @error('speaker') is-invalid @enderror" 
+                              name="speaker" id="#">{{ $event->speaker }}</textarea>
                               @error('speaker')
                               <div class="invalid-feedback">
                                   {{ $message }}
@@ -187,7 +191,8 @@
                         <div class="col-sm-5">
                           <div class="form-event">
                             <label for="#" class="form-label"><h2 class="h2-form">Price (in rupiah)</h2></label>
-                            <input type="number" name="price" class="fc-sc5 form-control @error('price') is-invalid @enderror" name="price" id="#" placeholder="Rp">
+                            <input type="number" name="price" class="fc-sc5 form-control @error('price') is-invalid @enderror" 
+                            name="price" id="#" placeholder="Rp" value="{{ old('price', $event->price) }}">
                               @error('price')
                               <div class="invalid-feedback">
                                   {{ $message }}

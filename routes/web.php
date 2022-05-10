@@ -74,8 +74,11 @@ Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showRese
 Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
 
 //Event
+Route::get('/event', [DasboardEventController::class, 'index']);
 Route::get('/RegisterEvent', [DasboardEventController::class, 'create']);
 Route::post('/RegisterEvent', [DasboardEventController::class, 'store']);
+Route::get('/editEvent/{event:id}', [DasboardEventController::class, 'edit']);
+Route::put('/editEvent/{event:id}', [DasboardEventController::class, 'update']);
 
 // //register check
 // Route::get('registercheck', function () {
