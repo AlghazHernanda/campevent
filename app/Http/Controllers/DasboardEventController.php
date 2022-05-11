@@ -41,6 +41,7 @@ class DasboardEventController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
 
         $validatedData = $request->validate([
             'title' => 'required|max:255',
@@ -55,12 +56,15 @@ class DasboardEventController extends Controller
             // 'published_at' => 'required',
         ]);
 
-        //logika untuk multi checkbox
-        if (!empty($request->input('eventTheme'))) {
-            $validatedData['eventTheme'] = join(',', $request->input('eventTheme'));
-        } else {
-            $validatedData['eventTheme'] = '';
-        }
+        // //logika untuk multi checkbox agar bentuk nya string berkoma
+        // if (!empty($request->input('eventTheme'))) {
+        //     $validatedData['eventTheme'] = join(',', $request->input('eventTheme'));
+        // } else {
+        //     $validatedData['eventTheme'] = '';
+        // }
+
+        //logika untuk mulit checkbox untuk masukin ke database dalam bentuk array
+        $validatedData['eventTheme'] = serialize($request['eventTheme']);
 
         //jika ada gambar yang di upload
         if ($request->file('image')) {
