@@ -86,6 +86,11 @@ Route::delete('/deleteEvent/{event:id}', [DasboardEventController::class, 'destr
 //whistlist
 Route::get('/wishlist', [WishlistController::class, 'index'])->middleware('auth');
 
+//My Event
+Route::get('myevent', function () {
+    return view('myevent');
+});
+
 // //register check
 // Route::get('registercheck', function () {
 //     return view('registercheck');
