@@ -15,11 +15,11 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id'); //foreign key ke table eventthems
+            $table->foreignId('category_id'); //foreign key ke table eventype
             $table->foreignId('user_id');
             $table->string('title');
             $table->string('eventType');
-            $table->string('eventTheme');
+            $table->json('eventTheme'); //bertipe json agar masuk ke database dalam bentuk array
             // $table->string('slug')->unique();
             $table->string('image')->nullable();
             $table->text('desc');

@@ -64,7 +64,7 @@ class DasboardEventController extends Controller
         // }
 
         //logika untuk mulit checkbox untuk masukin ke database dalam bentuk array
-        $validatedData['eventTheme'] = serialize($request['eventTheme']);
+        //$validatedData['eventTheme'] = serialize($request['eventTheme']);
 
         //jika ada gambar yang di upload
         if ($request->file('image')) {

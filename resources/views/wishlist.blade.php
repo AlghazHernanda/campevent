@@ -17,8 +17,8 @@
                         <img src="Vector-2.png" class="love" alt=" "/>
                       </div>
                       <div class="row text-card">
-                        <div class="col status-card">Paid</div>
-                        <div class="col info-card">online</div>
+                        <div class="col status-card">{{ $event->eventTheme[0] }}</div>
+                        <div class="col info-card">{{ $event->eventTheme[1] }}</div>
                       </div>
                     </div>
                       <div class="card-body">
@@ -27,7 +27,7 @@
                             <p class="bi bi-calendar-date">{{ $event->date }}</p>
                           </div>
                           <div class="col-sm">
-                            <p class="bi bi-person-circle"> Roisyal </p>
+                            <p class="bi bi-person-circle"> {{ $event->author->fullname }} </p>
                           </div>
                         </div>
                         <div class="col-sm-12">

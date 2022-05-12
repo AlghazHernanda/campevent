@@ -11,11 +11,16 @@ class Event extends Model
     // biar gapake fillable, ini artinya cuma id doang yg gaboleh di masukin mass assigment
     protected $guarded = ['id'];
 
+    //agar bisa masuk ke database dalam bentuk array
+    protected $casts = [
+        'eventTheme' => 'json'
+    ];
+
     //menghubungkn table post dengan category
     public function eventTypeTo()
     {
         //relasi one to one
-        return $this->belongsTo(EventType::class);
+        return $this->belongsTo(EventType::class, 'category_id');
     }
 
     public function author()
