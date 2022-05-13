@@ -1,0 +1,130 @@
+h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+  }
+  
+  h2 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  }
+  
+  h3 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  }
+  
+  h4 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  }
+  
+  h5 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  }
+  
+  h6 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  }
+  
+  p {
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 150%;
+  }
+  
+  h1, h2, h3, h4, p {
+    margin: 0;
+  }
+  
+  .reservationlist{
+      padding-top: 83px;
+  }
+  
+  .table{
+      text-align: center;
+  }
+  
+  .text-card{
+      width: 145px;
+      height: 36px;
+      position: absolute;
+      background: rgba(64, 64, 64, 0.8);
+      border-radius: 10px;
+  }
+  
+  .paymentstatus{
+      background: #D1E7DD;
+      border-radius: 10px;
+      width: 147.4px;
+      height: 32px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: 0.01em;
+      padding-top: 5px;
+      color: #000000;
+  }
+  
+  .reservation{
+      background: #008E89;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  .eventlist{
+      background: #7C684A;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  tbody{
+      background: #F8F8F9;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .btn-update{
+      width: 75.43px;
+      background: #16A34A;
+      border-radius: 5px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: 0.01em;
+      color: #FFFFFF;
+  }
+  
+  .btn-delete{
+      width: 75.43px;
+      background: #FF0025;
+      border-radius: 5px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: 0.01em;
+      color: #FFFFFF;
+  }
+  

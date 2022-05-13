@@ -1,0 +1,549 @@
+h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+  }
+  
+  h2 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  }
+  
+  h3 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  }
+  
+  h4 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  }
+  
+  h5 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  }
+  
+  h6 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  }
+  
+  p {
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 150%;
+  }
+  
+  h1, h2, h3, h4, p {
+    margin: 0;
+  }
+  
+  body {
+    background-color:white;
+  }
+  
+  #sectionOne{
+    background: url('https://i.ibb.co/j6PgPmc/section1.jpg');
+    background-size: cover;                      
+    background-repeat: no-repeat;
+    height: 681px;
+    padding-right: 131px;
+    padding-left: 131px;
+  }
+  
+  #sectionOne .form-outline{
+    width: 455px;
+    height: 50px;
+  }
+  
+  #sectionOne .form-control{
+    border-radius: 30px;
+    width: 440px;
+    height: 50px;
+  }
+  
+  #sectionOne .searchbox{
+    color: #FFFF;
+  }
+  
+  #sectionOne .btn-1{
+    background-color: #CEAB93;
+    color: #FFFF;
+    position: absolute;
+    width: 163px;
+    height: 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 10px;
+    border-radius: 10px;
+  }
+  
+  #sectionOne .btn-1:hover{
+    background-color: #ad8b73;
+  }
+  
+  #sectionOne .h1-secOne{
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 0.01em;
+  }
+  
+  #sectionOne .h3-secOne{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+  }
+  
+  #sectionOne .img-landingbox{
+    width: 442px;
+    height: 301px;
+  }
+  
+  #sectionTwo{
+    padding-top: 77px;
+    padding-right: 158px;
+    padding-left: 158px;
+  }
+  
+  #sectionTwo .caption-sectwo{
+    text-align: center;
+  }
+  
+  #sectionTwo .h2-secTwo{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    padding-bottom: 14px;
+    padding-top: 77px;
+  }
+  
+  #sectionTwo .h3-secTwo{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #BFBFBF;
+  }
+  
+  #sectionTwo .h4-secTwo{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+  
+  #sectionTwo .h5-secTwo{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.01em; 
+    color: #000000;
+  }
+  
+  #sectionTwo .comprehensive{
+    background-color: #FFFF;
+    width: 256px;
+    height: 250px;
+    border-radius: 20px;
+  }
+  
+  #sectionTwo .comprehensive:hover{
+    background-color: #f7CC74;
+  }
+  
+  #sectionTwo .uptodate{
+    background-color: #FFFF;
+    width: 256px;
+    height: 250px;
+    border-radius: 20px;
+  }
+  
+  #sectionTwo .uptodate:hover{
+    background-color: #f7CC74;
+  }
+  
+  #sectionTwo .trusted{
+    background-color: #FFFF;
+    width: 256px;
+    height: 250px;
+    border-radius: 20px;
+  }
+  
+  #sectionTwo .trusted:hover{
+    background-color: #f7CC74;
+  }
+  
+  #sectionTwo .hq{
+    background-color: #FFFF;
+    width: 256px;
+    height: 250px;
+    border-radius: 20px;
+  }
+  
+  #sectionTwo .hq:hover{
+    background-color: #f7CC74;
+  }
+  
+  #sectionTwo .img-component{
+    height: 200px;
+    width: 204.79998779296875px;
+    border-radius: 20px;
+  }
+  
+  #sectionTwo .icon-secTwo{
+    text-align: center;
+  }
+  
+  #sectionTwo .text-secTwo{
+    text-align: center;
+  }
+  
+  #sectionThree{
+    background: url('https://telegra.ph/file/120012a9da21cc51caf7c.jpg');
+    background-size: cover;                      
+    background-repeat: no-repeat;
+    height: 727px;
+    padding-top: 39px;
+    padding-right: 132px;
+    padding-left: 132px;
+  }
+  
+  #sectionThree .btn-1{
+    width: 65px;
+    height: 65px;
+    border-radius: 30px;
+    background: linear-gradient(140.86deg, rgba(255, 255, 255, 0.4) 12.57%, rgba(255, 255, 255, 0.2) 86.75%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+  }
+  
+  #sectionThree .bi-arrow-left{
+    font-weight: 600;
+    font-size: 30px;
+  }
+  
+  #sectionThree .bi-arrow-right{
+    font-weight: 600;
+    font-size: 30px;
+  }
+  
+  #sectionThree .h3-secThree{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: #404040;
+  }
+  
+  #sectionThree .card{
+    width: 250px;
+    height: 355px;
+    background: #F8F8F9;
+    border: 0px;
+    border-radius: 20px;
+  }
+  
+  #sectionThree .bi-calendar-date{
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.01em;
+      color: #000000;
+  }
+  
+  #sectionThree .bi-person-circle{
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.01em;
+      color: #000000;
+      padding-left: 35px;
+  }
+  
+  #sectionThree .btn-card{
+    margin-top: 24px;
+    width: 199px;
+    height: 38px;
+    background: #008E89;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+  }
+  
+  #sectionThree .btn-card:hover{
+    background: #025B58;
+    color: #FFFFFF;
+  }
+  
+  #sectionThree .btn-3{
+    color: #FFFF;
+    width: 326px;
+    height: 55px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    background: #F7CC74;
+    border-radius: 10px;
+  
+  }
+  
+  #sectionThree .text-card{
+    width: 125px;
+    height: 36px;
+    position: absolute;
+    left: 137px;
+    top: 215px;
+    background: rgba(64, 64, 64, 0.8);
+    border-radius: 10px;
+  }
+  
+  #sectionThree .status-card{
+    margin-top: 10px;
+    margin-left: 6px;
+    width: 57px;
+    height: 17px;
+    background: #FFF3CD;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    text-align: center;
+  }
+  
+  #sectionThree .info-card{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    padding-top: 10px;
+    padding-left: 5px;
+  }
+  
+  #sectionThree .carousel-indicators{
+    left: 0px;
+    top: auto;
+    bottom: -70px;
+  }
+  
+  #sectionThree .carousel-indicators button{
+    background-color: #BFBFBF;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+  }
+  
+  #sectionThree .carousel-indicators .active{
+    background-color: #008E89;
+  
+  }
+  
+  .sectionThree .carousel-indicators :active{
+    background-color: #000000;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+  }
+  
+  #sectionThree .ifest{
+    border-radius: 20px 20px 0px 0px;
+  
+  }
+  
+  #sectionThree .btn-3:hover{
+    background-color: #CDA552;
+  }
+  
+  #sectionThree .col-sm-12{
+    text-align: center;
+  }
+  
+  #sectionFour{
+    background: url('https://telegra.ph/file/263fd00c990f2c3e60736.jpg');
+    background-size: cover;                      
+    background-repeat: no-repeat;
+    height: 433px;
+    padding-right: 89px;
+    padding-left: 89px;
+  }
+  
+  #sectionFour .img-section4{
+    width: 387px;
+    height: 338px;
+  }
+  
+  #sectionFour .h1-secFour{
+    padding-top: 114px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+  
+  #sectionFour .h3-secFour{
+    padding-top: 16px;
+    padding-bottom: 51px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+  
+  #sectionFour .btn-1{
+    width: 256px;
+    height: 50px;
+    background: #378C1A;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+  }
+  
+  #sectionFour .btn-1:hover{
+    background-color:#1D6404;
+  }
+  
+  #sectionFive{
+    background: url('https://telegra.ph/file/f32d6a5c66cc206a01b7a.jpg');
+    background-size: cover;                      
+    background-repeat: no-repeat;
+    height: 360px;
+  }
+  
+  #sectionFive .col-sm-12{
+    padding-top: 33px;
+    padding-left: 225px;
+    padding-right: 225px;
+  }
+  
+  #sectionFive .notif{
+    width: 991px;
+    height: 259px;
+    background: #F8D7DA;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+  }
+  
+  #sectionFive .capt-secFive{
+    padding-top: 40px;
+    padding-left: 96px;
+    padding-right: 96px;
+  }
+  
+  #sectionFive .h2-secFive{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+  
+  #sectionFive .h4-secFive{
+    padding-top: 5px;
+    padding-bottom: 27px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+  
+  #sectionFive .btn-1{
+    width: 256px;
+    height: 43px;
+    background: #CEAB93;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+  }
+  
+  #sectionFive .btn-1:hover{
+    background-color:#AD8B73;
+  }
+  
+  #sectionFive .col-sm-4{
+    padding-top: 49px;
+  }
+  
+  #sectionFive .img-section5{
+    width: 162px;
+    height: 162px;
+  }
+  
