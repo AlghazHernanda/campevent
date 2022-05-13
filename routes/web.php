@@ -76,7 +76,7 @@ Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showRese
 Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
 
 //Event
-Route::get('/event', [DasboardEventController::class, 'index'])->middleware('auth');
+Route::get('/myevent', [DasboardEventController::class, 'index'])->middleware('auth');
 Route::get('/RegisterEvent', [DasboardEventController::class, 'create'])->middleware('auth');
 Route::post('/RegisterEvent', [DasboardEventController::class, 'store'])->middleware('auth');
 Route::get('/editEvent/{event:id}', [DasboardEventController::class, 'edit'])->middleware('auth');
@@ -87,9 +87,9 @@ Route::delete('/deleteEvent/{event:id}', [DasboardEventController::class, 'destr
 Route::get('/wishlist', [WishlistController::class, 'index'])->middleware('auth');
 
 //My Event
-Route::get('myevent', function () {
-    return view('myevent');
-});
+// Route::get('myevent', function () {
+//     return view('myevent');
+// });
 
 // //register check
 // Route::get('registercheck', function () {

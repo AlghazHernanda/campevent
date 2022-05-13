@@ -16,7 +16,7 @@ class DasboardEventController extends Controller
      */
     public function index()
     {
-        return view('coba_backend.event', [
+        return view('myevent', [
             'events' => Event::where('user_id', auth()->user()->id)->get() //dimana user_id nya sama kyk user id yang login
         ]);
     }
@@ -82,7 +82,7 @@ class DasboardEventController extends Controller
 
         Event::create($validatedData);
 
-        return redirect('/')->with('success', 'New Event has Been Added');
+        return redirect('/myevent')->with('success', 'New Event has Been Added');
     }
 
     /**
@@ -134,12 +134,12 @@ class DasboardEventController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        //logika untuk multi checkbox
-        if (!empty($request->input('eventTheme'))) {
-            $validatedData['eventTheme'] = join(',', $request->input('eventTheme'));
-        } else {
-            $validatedData['eventTheme'] = '';
-        }
+        // //logika untuk multi checkbox
+        // if (!empty($request->input('eventTheme'))) {
+        //     $validatedData['eventTheme'] = join(',', $request->input('eventTheme'));
+        // } else {
+        //     $validatedData['eventTheme'] = '';
+        // }
 
         //jika ada gambar yang di upload
         if ($request->file('image')) {
@@ -155,7 +155,7 @@ class DasboardEventController extends Controller
 
         Event::where('id', $event->id)->update($validatedData);
 
-        return redirect('/')->with('success', 'Event has Been Updated');
+        return redirect('/myevent')->with('success', 'Event has Been Updated');
     }
 
     /**
@@ -172,6 +172,6 @@ class DasboardEventController extends Controller
         }
         Event::destroy($event->id);
 
-        return redirect('/')->with('success', 'event has Been deleted');
+        return redirect('/myevent')->with('success', 'event has Been deleted');
     }
 }

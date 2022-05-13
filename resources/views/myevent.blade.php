@@ -27,7 +27,8 @@
             </table>
           </div>
           <div class="container">
-            <h3 style="padding-bottom: 17px; padding-top: 122px;">My Event List</h3>       
+            <h3 style="padding-bottom: 17px; padding-top: 122px;">My Event List</h3> 
+                 
             <table class="table table-bordered">
               <thead class="eventlist">
                 <tr>
@@ -39,24 +40,32 @@
                   <th>Action</th>
                 </tr>
               </thead>
+              @foreach ($events as $event) 
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>Technopreneur 2021</td>
-                  <td>2</td>
-                  <td>Rp 25.000,00</td>
+                  <td>{{ $loop->iteration }}</td>
+                  <td>{{ $event->title }}</td>
+                  <td>{{ $event->price }}</td>
+                  <td>{{ $event->date }}</td>
                   <td><div class="paymentstatus">Accepted</div></td>
                   <td><div class="row">
                       <div class="col">
-                        <a href="#"><button class="btn btn-update">Update</button></a>
+                        <a href="/editEvent/{{ $event->id }}"><button class="btn btn-update">Update</button></a>
                       </div>
                       <div class="col">
-                        <a href="#"><button class="btn btn-delete">Update</button></a>
+                        <form action="/deleteEvent/{{ $event->id }}" method="POST" class="d-inline">
+                          @method('delete')
+                          @csrf
+                          <button class="btn btn-delete" onclick="return confirm('are you sure?')"><span data-feather="x-circle">Delete</span></button>
+                        </form>
                       </div>
                   </div></td>
                 </tr>
               </tbody>
+              @endforeach
+        
             </table>
+           
           </div>
     </div>
 @endsection
