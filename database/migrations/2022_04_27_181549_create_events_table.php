@@ -26,6 +26,7 @@ class CreateEventsTable extends Migration
             $table->date('date');
             $table->string('speaker');
             $table->string('price');
+            $table->string('status')->default("waiting");
             $table->timestamp('published_at')->nullable(); //buat isi postnya di publish kapan, dan default nya 0
             $table->timestamps();
         });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\EventType;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -14,7 +15,9 @@ class AdminDashboardController extends Controller
      */
     public function index()
     {
-        //
+        return view('coba_admin.coba_myevent', [
+            'events' => Event::all() //dimana user_id nya sama kyk user id yang login
+        ]);
     }
 
     /**
@@ -57,7 +60,11 @@ class AdminDashboardController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        //echo("halo");
+        return view('coba_admin.accept', [
+            'event' => $event,
+            'eventTypes' => EventType::all()
+        ]);
     }
 
     /**
