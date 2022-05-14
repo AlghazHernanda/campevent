@@ -14,16 +14,20 @@
                   <th>Payment Status</th>
                 </tr>
               </thead>
+              @foreach ($events as $event) 
+              @if ($event->status === "waiting")
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>Technopreneur 2021</td>
+                  <td>{{ $loop->iteration }}</td>
+                  <td>{{ $event->title }}</td>
                   <td>2</td>
-                  <td>Rp 25.000,00</td>
-                  <td>12/01/2021</td>
-                  <td><div class="paymentstatus">Free</div></td>
+                  <td>{{ $event->price }}</td>
+                  <td>{{ $event->date }}</td>
+                  <td><div class="paymentstatus">{{ $event->status }}</div></td>
                 </tr>
               </tbody>
+              @endif
+              @endforeach
             </table>
           </div>
           <div class="container">
@@ -41,6 +45,7 @@
                 </tr>
               </thead>
               @foreach ($events as $event) 
+              @if ($event->status === "accepted")
               <tbody>
                 <tr>
                   <td>{{ $loop->iteration }}</td>
@@ -62,6 +67,7 @@
                   </div></td>
                 </tr>
               </tbody>
+              @endif
               @endforeach
         
             </table>

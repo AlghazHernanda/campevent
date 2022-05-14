@@ -8,6 +8,7 @@
         </div>
             <div class="row" style="padding-top: 38px;">
               @foreach ($events as $event)
+              @if ($event->status === "accepted")
                 <div class="col">
                   <div class="card">
                     <div class="photo">
@@ -38,6 +39,7 @@
                       </div>
                   </div>
                 </div>
+                @endif
                 @endforeach
     
                 {{-- <div class="col">

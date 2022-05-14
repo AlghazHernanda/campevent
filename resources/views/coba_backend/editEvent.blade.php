@@ -203,6 +203,7 @@
                       </div>
                       <!-- Section 5 -->
                       <hr class="garis-2" style="margin-bottom: 64px;">
+                      {{-- {{ dd($event) }} --}}
                       <div class="col-sm-12">
                        <button class="btn btn-register">Register your event</button>
                       </div>

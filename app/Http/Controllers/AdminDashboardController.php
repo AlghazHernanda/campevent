@@ -76,7 +76,32 @@ class AdminDashboardController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            // 'published_at' => 'required',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        // //logika untuk multi checkbox
+        // if (!empty($request->input('eventTheme'))) {
+        //     $validatedData['eventTheme'] = join(',', $request->input('eventTheme'));
+        // } else {
+        //     $validatedData['eventTheme'] = '';
+        // }
+
+        //jika ada gambar yang di upload
+
+        //$validatedData['image'] = $request->file('image')->store('post-images'); //maka simpan di dalam post-images
+
+
+        //$validatedData['user_id'] = auth()->user()->id;
+        //$validatedData['category_id'] = $validatedData['eventType'];
+        $validatedData['status'] = "accepted";
+
+        Event::where('id', $event->id)->update($validatedData);
+
+        return redirect('/admin')->with('success', 'Event has Been Updated');
     }
 
     /**

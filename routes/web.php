@@ -89,7 +89,8 @@ Route::get('/wishlist', [WishlistController::class, 'index'])->middleware('auth'
 
 //admin
 Route::get('/admin', [AdminDashboardController::class, 'index'])->middleware('admin');
-Route::get('/admin/accept{event:id}', [AdminDashboardController::class, 'edit'])->middleware('admin');
+Route::get('/admin/accept/{event:id}', [AdminDashboardController::class, 'edit'])->middleware('admin');
+Route::put('/admin/accept/{event:id}', [AdminDashboardController::class, 'update'])->middleware('admin');
 
 //My Event
 // Route::get('myevent', function () {
