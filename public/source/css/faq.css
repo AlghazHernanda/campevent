@@ -102,4 +102,81 @@ h1 {
     font-size: 18px;
     line-height: 27px;
   }
+
+  #sectionFive{
+    background: url('https://telegra.ph/file/f32d6a5c66cc206a01b7a.jpg');
+    background-size: cover;                   
+    background-repeat: no-repeat;
+    height: 360px;
+    background-position: center;
+  }
+  
+  #sectionFive .col-sm-12{
+    padding-top: 33px;
+    padding-left: 225px;
+    padding-right: 225px;
+  }
+  
+  #sectionFive .notif{
+    width: 991px;
+    height: 259px;
+    background: #F8D7DA;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+  }
+  
+  #sectionFive .capt-secFive{
+    padding-top: 40px;
+    padding-left: 96px;
+    padding-right: 96px;
+  }
+  
+  #sectionFive .h2-secFive{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+  
+  #sectionFive .h4-secFive{
+    padding-top: 5px;
+    padding-bottom: 27px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #000000;
+  }
+  
+  #sectionFive .btn-1{
+    width: 256px;
+    height: 43px;
+    background: #CEAB93;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+  }
+  
+  #sectionFive .btn-1:hover{
+    background-color:#AD8B73;
+  }
+  
+  #sectionFive .col-sm-4{
+    padding-top: 49px;
+  }
+  
+  #sectionFive .img-section5{
+    width: 162px;
+    height: 162px;
+  }
   
