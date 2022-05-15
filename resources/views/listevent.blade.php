@@ -20,7 +20,7 @@
                     <a href="#"><button class="btn btn-1">Search</button></a>
                 </div>
                 <div class="col-sm">
-                    <a href="#"><button class="btn btn-2">Register your event</button></a>  
+                    <a href="/RegisterEvent"><button class="btn btn-2">Register your event</button></a>  
                 </div>
             </div>
         </div>
@@ -149,24 +149,29 @@
             </div>
 
             <div class="body">
-
+                
                 <div class="row" style="padding-bottom: 40px;">
+                    @foreach ($events as $event)
                     <div class="col">
                         <div class="card">
                         <div class="photo">
                             <img src="ifest.png" class="ifest" alt=" "/>
                             <div class="row text-card">
-                            <div class="col status-card">Paid</div>
-                            <div class="col info-card">online</div>
+                            @for ($i = 0; $i < 2; $i++)
+                            <div class="col status-card">{{ $event->eventTheme[$i]}}</div>
+                            {{-- <div class="col status-card">{{ $event->eventTheme[1]}}</div>     --}}
+                            @endfor
+                            {{-- <div class="col status-card">Paid</div>
+                            <div class="col info-card">online</div> --}}
                             </div>
                         </div>
                             <div class="card-body">
                             <div class="row">
                                 <div class="col-sm">
-                                <p class="bi bi-calendar-date"> 29 Oct 2021 </p>
+                                <p class="bi bi-calendar-date">{{ $event->date }}</p>
                                 </div>
                                 <div class="col-sm">
-                                <p class="bi bi-person-circle"> Roisyal </p>
+                                <p class="bi bi-person-circle">{{ $event->author->fullname }}</p>
                                 </div>
                             </div>
                             <div class="col-sm-12">
@@ -175,8 +180,9 @@
                             </div>
                         </div>
                     </div>
+                    
 
-                    <div class="col">
+                    {{-- <div class="col">
                         <div class="card">
                         <div class="photo">
                             <img src="ifest.png" class="ifest" alt=" "/>
@@ -379,7 +385,8 @@
                             </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
+                    @endforeach
                 </div>
             </div>
 

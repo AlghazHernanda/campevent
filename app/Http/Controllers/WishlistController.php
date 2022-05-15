@@ -19,6 +19,13 @@ class WishlistController extends Controller
         ]);
     }
 
+    public function listEvent()
+    {
+        return view('listevent', [
+            "events" => Event::all()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

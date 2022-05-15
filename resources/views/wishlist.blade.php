@@ -18,10 +18,10 @@
                         <img src="Vector-2.png" class="love" alt=" "/>
                       </div>
                       <div class="row text-card">
-                        @foreach ($event->eventTheme as $event_eventTheme_single)
-                        <div class="col status-card">{{ $event->eventTheme_single}}</div>
-                        @endforeach
-                        {{-- <div class="col info-card">{{ $event->eventTheme[1] }}</div> --}}
+                        @for ($i = 0; $i < 2; $i++)
+                        <div class="col status-card">{{ $event->eventTheme[$i]}}</div>
+                        {{-- <div class="col status-card">{{ $event->eventTheme[1]}}</div>     --}}
+                        @endfor
                       </div>
                     </div>
                       <div class="card-body">

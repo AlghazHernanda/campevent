@@ -86,6 +86,7 @@ Route::delete('/deleteEvent/{event:id}', [DasboardEventController::class, 'destr
 
 //whistlist
 Route::get('/wishlist', [WishlistController::class, 'index'])->middleware('auth');
+Route::get('/listevent', [WishlistController::class, 'listEvent'])->middleware('auth');
 
 //admin
 Route::get('/admin', [AdminDashboardController::class, 'index'])->middleware('admin');
