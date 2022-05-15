@@ -317,7 +317,7 @@
             </div>
         </div>
         <div class="col-sm-12" style="padding-top: 99px;">
-            <a href="#"><button class="btn btn-3">Explore All Events</button></a>
+            <a href="/registerevent"><button class="btn btn-3">Register Your Event</button></a>
         </div>
     </div>
 
