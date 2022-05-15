@@ -87,14 +87,14 @@
                     <div class="modal-content">
                         <!-- Modal body -->
                         <div class="modal-body">
-                            <div class="image"> <img class="vector" src="Vector.png"> </div>
+                            <div class="image"> <img class="vector" src="/source/img/Vector.png"> </div>
                             <h2 class="h2-modal">
                                 Success
                             </h2>
                             <h3 class="h3-modal">
                                 Pay the bill in myEvent page if the event is paid event
                             </h3>
-                            <a href="#"><button class="btn btn-modal">Back to list event</button></a>
+                            <a href="/listevent"><button class="btn btn-modal">Back to list event</button></a>
                         </div>
                     </div>
                 </div>
