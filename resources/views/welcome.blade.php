@@ -317,7 +317,7 @@
             </div>
         </div>
         <div class="col-sm-12" style="padding-top: 99px;">
-            <a href="/registerevent"><button class="btn btn-3">Register Your Event</button></a>
+            <a href="/listevent"><button class="btn btn-3">Explore All Events</button></a>
         </div>
     </div>
 
@@ -331,7 +331,7 @@
             <div class="col-sm-8">
                 <h1 class="h1-secFour">Do you have an impactful event for students?</h1>
                 <h3 class="h3-secFour">You can boost your event and promote with us!</h3>
-                <a href="#"><button class="btn btn-1">Explore All Events</button></a>
+                <a href="/registerevent"><button class="btn btn-1">Register Your Event</button></a>
             </div>
         </div>
     </div>
