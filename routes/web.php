@@ -43,6 +43,11 @@ Route::get('resetcheck', function () {
     return view('resetcheck');
 });
 
+//event detail
+Route::get('eventdetail', function () {
+    return view('eventdetail');
+});
+
 //login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 //login authenticate

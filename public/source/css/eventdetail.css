@@ -1,0 +1,361 @@
+h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+  }
+  
+  h2 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  }
+  
+  h3 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  }
+  
+  h4 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  }
+  
+  h5 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  }
+  
+  h6 {
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  }
+  
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #BFBFBF;
+  }
+  
+  h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+.header{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.h1-header{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 45px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    padding-bottom: 21px;
+    padding-top: 39px;
+}
+
+.hr{
+    width: 1358px;
+    border: 1px solid #000000;
+    margin-bottom: 37px;
+}
+
+.photo{
+    text-align: center;
+}
+
+.ifest{
+    border-radius: 20px;
+    width: 442px;
+    height: 444px;
+}
+
+.techno{
+    text-align: center;
+}
+
+.desc{
+    text-align: center;
+    padding-left: 550px;
+    padding-right: 550px;
+}
+
+.text{
+    background: rgba(64, 64, 64, 0.8);
+    border-radius: 10px;
+    width: 125px;
+    height: 36px;  
+}
+
+.status{
+    margin-top: 10px;
+    margin-left: 3px;
+    background: #FFF3CD;
+    border-radius: 10px;
+    width: 50px;
+    height: 17px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    position: absolute;
+}
+
+.info{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    margin-left: 44px;
+}
+
+.event{
+    width: 87px;
+    height: 35px;
+    background: #D1E7DD;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #000000;
+    padding-top: 5px;
+}
+
+#about{
+  padding-top: 85px;
+  padding-left: 224px;
+  padding-right: 224px;
+}
+
+.h4-about{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  color: #000000;
+  padding-top: 15px;
+  padding-bottom: 40px;
+}
+
+.bi-calendar2-week-fill{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  color: #000000;
+  padding-top: 24px;
+}
+
+.bi-geo-alt-fill{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  color: #000000;
+  padding-top: 24px;
+}
+
+.speaker{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  color: #000000;
+  padding-top: 20px;
+  padding-bottom: 75px;
+}
+
+.ticket{
+  background: #E0DDAA;
+  border-radius: 10px;
+  width: 440px;
+  height: 308px;
+  padding-top: 15px;
+  padding-left: 21px;
+  padding-right: 21px;
+  margin-bottom: 136px;
+  
+}
+
+.bi-ticket-fill{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.h2-price{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 39px;
+  letter-spacing: 0.01em;
+  color: #000000;
+  padding-top: 24px;
+}
+
+.form-outline{
+  background: #F8F8F9;
+  border-radius: 10px;
+  width: 62px;
+  height: 48px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.form-control{
+  background: #F8F8F9;
+  border-radius: 10px;
+  width: 62px;
+  height: 48px;
+}
+
+.col-sm-12{
+  text-align: center;
+  padding-top: 32px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.btn-minus{
+  background: #F8F8F9;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.btn-plus{
+  background: #F8F8F9;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.btn-buy{
+  width: 139px;
+  height: 45px;
+  background: #378C1A;
+  border-radius: 10px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  margin-top: 35px;
+}
+
+.btn-buy:hover{
+  background: #1D6404;
+  border-radius: 10px;
+  color: #FFFFFF;
+}
+
+.modal-content{
+  width: 536px;
+  height: 355px;
+  background: #FFFFFF;
+  border-radius: 15px;
+}
+
+.modal-body{
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 29px;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.modal-dialog{
+  margin-top: 259px;
+}
+
+.vector{
+  padding-bottom: 11px;
+}
+
+.h2-modal{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 39px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #25282B;
+  padding-bottom: 22px;
+}
+
+.h3-modal{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #000000;
+  padding-bottom: 38px;
+}
+
+.btn-modal{
+  width: 229px;
+  height: 45px;
+  background: #F7CC74;
+  border-radius: 10px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+}
+
+.btn-modal:hover{
+  background: #CDA552;
+  border-radius: 10px;
+  color: #FFFFFF;
+}
