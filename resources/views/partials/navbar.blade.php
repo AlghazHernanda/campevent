@@ -12,7 +12,7 @@
           <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/event">Event</a>
+          <a class="nav-link" href="/myevent">Event</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/about">About Us</a>
