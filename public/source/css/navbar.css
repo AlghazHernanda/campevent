@@ -38,3 +38,47 @@
 #Navbar .nav-link:hover{
     color:  #7c684a;
 }
+
+.btn-logout{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    background: #EF1327;
+    border-radius: 10px;
+    width: 131px;
+    height: 39px;
+    margin-left: 15px;
+}
+
+.profile{
+    width: 162px;
+    height: 38px;
+    background: #FFFFFF;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.dropdown-item{
+    width: 162px;
+    height: 38px;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.bariz1{
+    width: 40px;
+    height: 40px;
+}
+
+.dropdown-menu{
+    width: 164px;
+    height: 196px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding-top: 0px;
+}
