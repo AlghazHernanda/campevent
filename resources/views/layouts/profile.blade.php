@@ -29,9 +29,9 @@
     {{-- manggil navbar di folder partials.navbar --}}
     @include('partials.navbar')
 
-    <div>
+    <div class="container-fluid">
 
-        @yield('body') {{-- jadi ini nanti isinya halaman-halaman lain, biar pake boostrap nya 1 aja --}}
+        @yield('container') {{-- jadi ini nanti isinya halaman-halaman lain, biar pake boostrap nya 1 aja --}}
 
     </div>
 

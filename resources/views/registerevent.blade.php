@@ -1,8 +1,7 @@
 @extends('layouts.registerevent') {{-- ini memanggil file main yang di dalam layout --}}
-@section('register')
+@section('registerevent')
     <div class="container-fluid">
         <div class="row">
-
             <div class="kiri">
                 <div class="text-kiri">
                     <h1 class="h1-kiri">Promote with Us!</h1>
@@ -19,7 +18,6 @@
             <div class="kanan">
                 <form action="/RegisterEvent" method="post" enctype="multipart/form-data">
                     @csrf
-
                     <div class="text-kanan">
                         <h2 class="h2-kanan">Register your Event</h2>
                         <h3 class="h3-kanan">Holla! you can promote your event with us</h3>
@@ -39,14 +37,13 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
-
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="drop-event">
                                     <h2 class="h2-form" style="padding-bottom: 10px; padding-left: 35px;">Event Theme
                                     </h2>
-                                    <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton1"
+                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
                                         style="margin-left: 35px;" data-bs-toggle="dropdown" aria-expanded="false">
                                         Select Theme
                                     </button>

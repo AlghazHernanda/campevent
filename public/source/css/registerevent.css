@@ -57,7 +57,7 @@ h1, h2, h3, h4, p {
 }
 
 .kiri{
-    width: 664px;
+    width: 50%;
     height: 1040px;
     background: url('https://telegra.ph/file/252f18abcedd6d01e187e.jpg');
     background-size: cover;                      
@@ -68,7 +68,7 @@ h1, h2, h3, h4, p {
 
 .kanan{
     height: 1040px;
-    width: 776px;
+    width: 50%;
     background-color: #FFFFFF;
     padding-left: 0px;
     padding-right: 0px;
@@ -144,7 +144,7 @@ h1, h2, h3, h4, p {
     border-radius: 10px;
 }
 
-.dropdown-toggle{
+#dropdownMenuButton1{
     border: 1px solid rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
     border-radius: 10px;

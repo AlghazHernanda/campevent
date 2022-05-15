@@ -32,7 +32,7 @@
 
     <div>
 
-        @yield('register') {{-- jadi ini nanti isinya halaman-halaman lain, biar pake boostrap nya 1 aja --}}
+        @yield('registerevent') {{-- jadi ini nanti isinya halaman-halaman lain, biar pake boostrap nya 1 aja --}}
 
     </div>
 
