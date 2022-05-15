@@ -69,7 +69,6 @@ Route::put('/change', [RegisterController::class, 'updateChange'])->middleware('
 
 
 
-
 //forgotpassword
 Route::get('/forgot', [ForgotPasswordController::class, 'ForgetPassword']);
 Route::post('/forgot', [ForgotPasswordController::class, 'ForgetPasswordStore'])->name('ForgetPasswordPost');
