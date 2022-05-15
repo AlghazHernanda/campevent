@@ -18,10 +18,9 @@
 
     {{-- my stylse --}}
     <link rel="stylesheet" href="{{ asset('source/css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ asset('source/css/faq.css') }}">
     <link rel="stylesheet" href="{{ asset('source/css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('source/css/about.css') }}">
-    <link rel="stylesheet" href="{{ asset('source/css/wishlist.css') }}">
+    <link rel="stylesheet" href="{{ asset('source/css/registerevent.css') }}">
+
 
     <title>CampEvent</title>
 </head>
@@ -31,17 +30,12 @@
     {{-- manggil navbar di folder partials.navbar --}}
     @include('partials.navbar')
 
-    <div class="container mt-4">
-
-        @yield('container') {{-- jadi ini nanti isinya halaman-halaman lain, biar pake boostrap nya 1 aja --}}
-
-    </div>
-
     <div>
 
-        @yield('body') {{-- jadi ini nanti isinya halaman-halaman lain, biar pake boostrap nya 1 aja --}}
+        @yield('register') {{-- jadi ini nanti isinya halaman-halaman lain, biar pake boostrap nya 1 aja --}}
 
     </div>
+
     {{-- manggil footer di folder partials.footer --}}
     @include('partials.footer')
 
