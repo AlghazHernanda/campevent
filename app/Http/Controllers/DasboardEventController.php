@@ -34,6 +34,13 @@ class DasboardEventController extends Controller
         ]);
     }
 
+    public function welcomeShow()
+    {
+        return view('welcome', [
+            "events" => Event::all()
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

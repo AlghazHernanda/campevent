@@ -22,9 +22,9 @@ use App\Http\Controllers\WishlistController;
 */
 
 //home
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //about us
 Route::get('about', function () {
@@ -86,6 +86,7 @@ Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showRese
 Route::post('reset-password', [ForgotPasswordController::class, 'ResetPasswordStore'])->name('ResetPasswordPost');
 
 //Event
+Route::get('/', [DasboardEventController::class, 'welcomeShow']);
 Route::get('/myevent', [DasboardEventController::class, 'index'])->middleware('auth');
 Route::get('/RegisterEvent', [DasboardEventController::class, 'create'])->middleware('auth');
 Route::post('/RegisterEvent', [DasboardEventController::class, 'store'])->middleware('auth');
@@ -93,6 +94,7 @@ Route::get('/editEvent/{event:id}', [DasboardEventController::class, 'edit'])->m
 Route::put('/editEvent/{event:id}', [DasboardEventController::class, 'update'])->middleware('auth');
 Route::get('/eventdetail/{event:id}', [DasboardEventController::class, 'show'])->middleware('auth');
 Route::delete('/deleteEvent/{event:id}', [DasboardEventController::class, 'destroy'])->middleware('auth');
+
 
 //whistlist
 Route::get('/wishlist', [WishlistController::class, 'index'])->middleware('auth');
