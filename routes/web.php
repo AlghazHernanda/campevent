@@ -49,6 +49,11 @@ Route::get('eventdetail', function () {
     return view('eventdetail');
 });
 
+//dashboard admin
+Route::get('dashboard', function () {
+    return view('dashboard');
+});
+
 //login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 //login authenticate
