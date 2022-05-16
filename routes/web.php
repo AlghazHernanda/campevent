@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\auth\ForgotPasswordController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DasboardEventController;
 use App\Http\Controllers\WhistlistController;
 use App\Http\Controllers\WishlistController;
@@ -85,6 +86,7 @@ Route::get('/RegisterEvent', [DasboardEventController::class, 'create'])->middle
 Route::post('/RegisterEvent', [DasboardEventController::class, 'store'])->middleware('auth');
 Route::get('/editEvent/{event:id}', [DasboardEventController::class, 'edit'])->middleware('auth');
 Route::put('/editEvent/{event:id}', [DasboardEventController::class, 'update'])->middleware('auth');
+Route::get('/eventdetail/{event:id}', [DasboardEventController::class, 'show'])->middleware('auth');
 Route::delete('/deleteEvent/{event:id}', [DasboardEventController::class, 'destroy'])->middleware('auth');
 
 //whistlist
@@ -95,6 +97,10 @@ Route::get('/listevent', [WishlistController::class, 'listEvent'])->middleware('
 Route::get('/admin', [AdminDashboardController::class, 'index'])->middleware('admin');
 Route::get('/admin/accept/{event:id}', [AdminDashboardController::class, 'edit'])->middleware('admin');
 Route::put('/admin/accept/{event:id}', [AdminDashboardController::class, 'update'])->middleware('admin');
+
+//contact us
+Route::get('/contact', [ContactController::class, 'index']);
+Route::post('/contact', [ContactController::class, 'store']);
 
 //My Event
 // Route::get('myevent', function () {

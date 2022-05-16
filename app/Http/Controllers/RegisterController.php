@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 use App\Models\VerifyUser;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 
 class RegisterController extends Controller
@@ -147,11 +148,20 @@ class RegisterController extends Controller
             //--tapi kalo untuk user itu sendiri gamau ganti username jadnya gakenapa kenapa
         ]);
 
+        if ($request->file('image')) {
+            // ika ada image lama, maka mendelete image lama
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $image = $request->file('image')->store('post-images'); //maka simpan di dalam post-images
+        }
+
         auth()->user()->update([
             'fullname' => $request->fullname,
             'email' => $request->email,
             'university' => $request->university,
             'username' =>  $request->username,
+            'image' => $image,
         ]);
 
         return back()->with('success', 'your profile has been updated');

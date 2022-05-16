@@ -29,7 +29,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                         aria-expanded="false" id="navbarDropdownMenuLink">
-                        <img class="rounded-circle" src="/source/img/bariz1.png" width="40" height="40px">
+                        <img class="rounded-circle" src="{{ asset('storage/' . auth()->user()->image) }}" width="40" height="40px">
+                        {{-- {{ asset('storage/' . $event->image) }} --}}
                         {{ auth()->user()->fullname }}
                     </a>
 

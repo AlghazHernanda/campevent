@@ -160,7 +160,7 @@
                             <div class="col">
                                 <div class="card">
                                     <div class="photo">
-                                        <img src="ifest.png" class="ifest" alt=" " />
+                                        <img src="{{ asset('storage/' . $event->image) }}" class="ifest" alt=" " />
                                         <div class="row text-card">
                                             @for ($i = 0; $i < 2; $i++)
                                                 <div class="col status-card">{{ $event->eventTheme[$i] }}</div>
@@ -180,7 +180,7 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-12">
-                                            <a href="#"><button class="btn btn-card">See Details</button></a>
+                                            <a href="/eventdetail/{{ $event->id }}"><button class="btn btn-card">See Details</button></a>
                                         </div>
                                     </div>
                                 </div>

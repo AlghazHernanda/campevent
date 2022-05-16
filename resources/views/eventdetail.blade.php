@@ -12,7 +12,7 @@
 
         <div class="techno">
             <div>
-                <h2 class="h2-text" style="padding-top: 25px; padding-bottom: 25px;">TECHNOPRENEUR 2021</h2>
+                <h2 class="h2-text" style="padding-top: 25px; padding-bottom: 25px;">{{ $event->title }}</h2>
                 <div class="row desc">
                     <div class="col-sm">
                         <div class="row text">
@@ -35,13 +35,7 @@
         <div id="about">
             <h3>About the event :</h3>
             <h4 class="h4-about">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus faucibus amet cursus cursus risus
-                faucibus. Pulvinar nulla faucibus orci nisi lacus ullamcorper nascetur. A, scelerisque felis erat
-                consectetur sem urna egestas ac. Adipiscing nec nec gravida elit, proin elementum et. Fermentum est vitae at
-                ornare erat eget. Ante quis vulputate ut et blandit elit id eget suspendisse. Placerat curabitur proin lorem
-                tortor aenean dolor nullam mattis. Commodo ipsum amet, velit, enim mauris. At velit dolor nunc lorem
-                ullamcorper. Vitae felis, velit, a, ac, congue sit morbi. Convallis id gravida non nisl, eleifend ipsum
-                volutpat purus nisi.
+                {!! $event->desc !!}
             </h4>
             <h3>Date and Time :</h3>
             <p class="bi bi-calendar2-week-fill"> Tuesday, 12 Januari 2021</p>
