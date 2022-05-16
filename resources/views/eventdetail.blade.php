@@ -16,8 +16,11 @@
                 <div class="row desc">
                     <div class="col-sm">
                         <div class="row text">
-                            <div class="col status">Paid</div>
-                            <div class="col info">online</div>
+                            @for ($i = 0; $i < 2; $i++)
+                            <div class="col status">{{ $event->eventTheme[$i] }}</div>
+                            @endfor
+                            
+                            {{-- <div class="col info">online</div> --}}
                         </div>
                     </div>
                     <div class="col-sm">
@@ -51,7 +54,7 @@
             <!-- Ticket -->
             <div class="ticket">
                 <p class="bi bi-ticket-fill"> Ticket Price :</p>
-                <h2 class="h2-price">Rp 25.000,00</h2>
+                <h2 class="h2-price">Rp.{{ format_uang($event->price) }}</h2>
                 <div class="col-sm-12">
                     <!-- Quantity -->
                     <div class="d-flex">
