@@ -15,7 +15,7 @@ class AdminDashboardController extends Controller
      */
     public function index()
     {
-        return view('coba_admin.coba_myevent', [
+        return view('dashboard', [
             'events' => Event::all() //dimana user_id nya sama kyk user id yang login
         ]);
     }

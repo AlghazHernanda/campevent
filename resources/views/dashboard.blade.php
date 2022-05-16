@@ -1,5 +1,18 @@
 @extends('layouts.dashboard')
 @section('dashboard')
+@php
+function convertDateDBtoIndo($string){
+    // contoh : 2019-01-30
+    
+    $bulanIndo = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September' , 'Oktober', 'November', 'Desember'];
+ 
+    $tanggal = explode("-", $string)[2];
+    $bulan = explode("-", $string)[1];
+    $tahun = explode("-", $string)[0];
+ 
+    return $tanggal . " " . $bulanIndo[abs($bulan)] . " " . $tahun;
+}
+@endphp
     <div class="container-fluid">
         <div class="row flex-nowrap">
             <div class="dashboard col container">
@@ -61,28 +74,35 @@
                             <th>Action</th>
                         </tr>
                     </thead>
+                    @foreach ($events as $event)
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Technopreneur 2021</td>
-                            <td>2</td>
-                            <td>Rp 25.000,00</td>
-                            <td>12/01/2021</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $event->title }}</td>
+                            <td>{{ $event->status }}</td>
+                            <td>Rp.{{ format_uang($event->price) }}</td>
+                            <td>{{ convertDateDBtoIndo($event->date)}}</td>
                             <td>
                                 <div class="action row">
                                     <div class="col-sm">
                                         <a href="#" class="accept">Accept<a></a>
                                     </div>
                                     <div class="col-sm">
-                                        <a href="#" class="delete">Delete<a></a>
+                                        <form action="/deleteEvent/{{ $event->id }}" method="POST" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="delete" onclick="return confirm('are you sure?')"><span data-feather="x-circle">Delete</span></button>
+                                          </form>
+                                        {{-- <a href="#" class="delete">Delete<a></a> --}}
                                     </div>
                                     <div class="col-sm">
-                                        <a href="#" class="details">Details<a></a>
+                                        <a href="/eventdetail/{{ $event->id }}" class="details">Details<a></a>
                                     </div>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
+                    @endforeach
                 </table>
 
                 <div class="center container">
