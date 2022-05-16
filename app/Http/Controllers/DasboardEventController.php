@@ -94,7 +94,9 @@ class DasboardEventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        return view('eventdetail', [
+            'event' => $event
+        ]);
     }
 
     /**

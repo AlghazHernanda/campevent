@@ -85,6 +85,7 @@ Route::get('/RegisterEvent', [DasboardEventController::class, 'create'])->middle
 Route::post('/RegisterEvent', [DasboardEventController::class, 'store'])->middleware('auth');
 Route::get('/editEvent/{event:id}', [DasboardEventController::class, 'edit'])->middleware('auth');
 Route::put('/editEvent/{event:id}', [DasboardEventController::class, 'update'])->middleware('auth');
+Route::get('/eventdetail/{event:id}', [DasboardEventController::class, 'show'])->middleware('auth');
 Route::delete('/deleteEvent/{event:id}', [DasboardEventController::class, 'destroy'])->middleware('auth');
 
 //whistlist
