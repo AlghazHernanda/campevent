@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Event;
 use App\Models\EventType;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class AdminDashboardController extends Controller
     public function index()
     {
         return view('dashboard', [
-            'events' => Event::all() //dimana user_id nya sama kyk user id yang login
+            'events' => Event::all(), //dimana user_id nya sama kyk user id yang login
+            'contact' => Contact::all(),
         ]);
     }
 
