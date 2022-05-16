@@ -15,7 +15,7 @@ class EventFactory extends Factory
     {
 
         $eventTheme = ["offline", "free"];
-        $status = "waiting";
+        $status = "accepted";
         return [
             'title' => $this->faker->sentence(mt_rand(2, 8)), //mt_rand = masukin panjang sentece random, jadi minimal 2 kata maksimal 8 kata
             'eventType' => mt_rand(1, 2),
@@ -31,6 +31,7 @@ class EventFactory extends Factory
             'user_id' => mt_rand(1, 4),
             'category_id' => mt_rand(1, 3),
             'status' => $status,
+            'no_hp' => $this->faker->randomNumber(9, true)
         ];
     }
 }

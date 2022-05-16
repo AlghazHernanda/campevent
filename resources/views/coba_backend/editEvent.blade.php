@@ -139,6 +139,18 @@
                           </div>
                           @enderror
                           </div>
+                          <h2 class="h2-form" style="padding-bottom: 5px; padding-left: 35px;">Phone Number
+                          </h2>
+                          <div class="input-group">
+                              <i class="bi bi-telephone input-group-text"></i>
+                              <input type="number" name="no_hp" class="datepicker form-control @error('no_hp') is-invalid @enderror" 
+                              placeholder="08XXXXXXXXXX"  value="{{ old('date', $event->no_hp) }}">
+                              @error('no_hp')
+                              <div class="invalid-feedback">
+                                  {{ $message }}
+                              </div>
+                              @enderror
+                          </div>
                       </div>
                       <!-- Section 3 -->
                       <hr class="garis-2">

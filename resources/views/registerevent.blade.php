@@ -157,7 +157,12 @@
                                 </h2>
                                 <div class="input-group">
                                     <i class="bi bi-telephone input-group-text"></i>
-                                    <input type="text" class="datepicker form-control" placeholder="08XXXXXXXXXX">
+                                    <input type="number" class="datepicker form-control @error('no_hp') is-invalid @enderror" name="no_hp" placeholder="08XXXXXXXXXX">
+                                    @error('no_hp')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                                 </div>
                             </div>
                             <!-- Section 3 -->

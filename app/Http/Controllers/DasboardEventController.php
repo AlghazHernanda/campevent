@@ -61,6 +61,7 @@ class DasboardEventController extends Controller
             'date' => 'required',
             'speaker' => 'required',
             'price' => 'required',
+            'no_hp' => 'required',
             // 'published_at' => 'required',
         ]);
 
@@ -139,6 +140,7 @@ class DasboardEventController extends Controller
             'date' => 'required',
             'speaker' => 'required',
             'price' => 'required',
+            'no_hp' => 'required',
             // 'published_at' => 'required',
         ];
 

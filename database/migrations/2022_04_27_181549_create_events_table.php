@@ -24,6 +24,7 @@ class CreateEventsTable extends Migration
             $table->string('image')->nullable();
             $table->text('desc');
             $table->date('date');
+            $table->string('no_hp');
             $table->string('speaker');
             $table->string('price');
             $table->string('status')->default("waiting");
