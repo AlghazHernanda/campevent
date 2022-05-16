@@ -95,8 +95,8 @@ h1 {
 
 .desc{
     text-align: center;
-    padding-left: 550px;
-    padding-right: 550px;
+    padding-left: 500px;
+    padding-right: 500px;
 }
 
 .text{
@@ -358,4 +358,22 @@ h1 {
   background: #CDA552;
   border-radius: 10px;
   color: #FFFFFF;
+}
+
+.btn-love{
+  width: 87px;
+  height: 35px;
+  background: red;
+  border-radius: 10px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.bi-heart-fill{
+color: #FFFFFF;
 }

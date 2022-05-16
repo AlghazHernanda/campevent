@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div class="col-sm">
-                        <i class="bi bi-heart-fill fs-4"></i>
+                        <a href="#"><button class="btn btn-love"><i class="bi bi-heart-fill fs-4"></i></button></a>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                 <h2 class="h2-price">Rp.{{ format_uang($event->price) }}</h2>
                 <div class="col-sm-12">
                     <!-- Quantity -->
-                    <div class="d-flex">
+                    {{-- <div class="d-flex">
                         <button class="btn btn-minus"
                             onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                             <i class="bi bi-dash"></i>
@@ -71,9 +71,9 @@
                             onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                             <i class="bi bi-plus"></i>
                         </button>
-                    </div>
-                    <a href="#"><button class="btn btn-buy" data-bs-toggle="modal" data-bs-target="#myModal">Buy
-                            Ticket</button></a>
+                    </div> --}}
+                    <h6 style="padding-top: 10px;">You can pay with gopay and dana :</h6>
+                    <h4 style="padding-top: 10px;">08732122349</h4>
                 </div>
             </div>
             <!-- Ticket -->

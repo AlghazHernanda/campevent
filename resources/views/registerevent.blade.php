@@ -153,6 +153,12 @@
                                         </div>
                                     @enderror
                                 </div>
+                                <h2 class="h2-form" style="padding-bottom: 5px; padding-left: 35px;">Phone Number
+                                </h2>
+                                <div class="input-group">
+                                    <i class="bi bi-telephone input-group-text"></i>
+                                    <input type="text" class="datepicker form-control" placeholder="08XXXXXXXXXX">
+                                </div>
                             </div>
                             <!-- Section 3 -->
                             <hr class="garis-2">
