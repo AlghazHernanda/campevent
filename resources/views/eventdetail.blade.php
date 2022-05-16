@@ -7,7 +7,7 @@
         <hr class="hr">
 
         <div class="photo">
-            <img src="/source/img/ifest.png" class="ifest" alt=" " />
+            <img src="{{ $event->image }}" class="ifest" alt=" " />
         </div>
 
         <div class="techno">
@@ -46,9 +46,9 @@
             <p class="bi bi-geo-alt-fill"> Zoom Meeting</p>
             <h3 style="padding-top: 40px;">Speaker :</h3>
             <ul class="speaker">
-                <li>Roisyal Bariz (CEO Lebahganteng)</li>
-                <li>Hadyan Almer (Founder Freeyork.id)</li>
-                <li>Many more</li>
+                <li>{{ $event->speaker }}</li>
+                {{-- <li>Hadyan Almer (Founder Freeyork.id)</li>
+                <li>Many more</li> --}}
             </ul>
 
             <!-- Ticket -->
@@ -73,7 +73,7 @@
                         </button>
                     </div> --}}
                     <h6 style="padding-top: 10px;">You can pay with gopay and dana :</h6>
-                    <h4 style="padding-top: 10px;">08732122349</h4>
+                    <h4 style="padding-top: 10px;">{{ $event->no_hp }}</h4>
                 </div>
             </div>
             <!-- Ticket -->
