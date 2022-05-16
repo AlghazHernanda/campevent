@@ -1,5 +1,18 @@
 @extends('layouts.eventdetail')
 @section('container')
+@php
+function convertDateDBtoIndo($string){
+    // contoh : 2019-01-30
+    
+    $bulanIndo = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September' , 'Oktober', 'November', 'Desember'];
+ 
+    $tanggal = explode("-", $string)[2];
+    $bulan = explode("-", $string)[1];
+    $tahun = explode("-", $string)[0];
+ 
+    return $tanggal . " " . $bulanIndo[abs($bulan)] . " " . $tahun;
+}
+@endphp
     <div class="header">
         <div>
             <h1 class="h1-header">Event Details</h1>
@@ -41,7 +54,7 @@
                 {!! $event->desc !!}
             </h4>
             <h3>Date and Time :</h3>
-            <p class="bi bi-calendar2-week-fill"> Tuesday, 12 Januari 2021</p>
+            <p class="bi bi-calendar2-week-fill">{{ convertDateDBtoIndo($event->date)}}</p>
             <h3 style="padding-top: 40px;">Place :</h3>
             <p class="bi bi-geo-alt-fill"> Zoom Meeting</p>
             <h3 style="padding-top: 40px;">Speaker :</h3>

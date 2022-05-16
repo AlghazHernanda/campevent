@@ -1,5 +1,18 @@
 @extends('layouts.listevent') {{-- ini memanggil file main yang di dalam layout --}}
 @section('listevent')
+@php
+function convertDateDBtoIndo($string){
+    // contoh : 2019-01-30
+    
+    $bulanIndo = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September' , 'Oktober', 'November', 'Desember'];
+ 
+    $tanggal = explode("-", $string)[2];
+    $bulan = explode("-", $string)[1];
+    $tahun = explode("-", $string)[0];
+ 
+    return $tanggal . " " . $bulanIndo[abs($bulan)] . " " . $tahun;
+}
+@endphp
     <div id="section1">
         <div class="col-sm-12">
             <div class="searchbox">
@@ -174,7 +187,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm">
-                                                <p class="bi bi-calendar-date">{{ $event->date }}</p>
+                                                <p class="bi bi-calendar-date">{{ convertDateDBtoIndo($event->date)}}</p>
                                             </div>
                                             <div class="col-sm">
                                                 <p class="bi bi-person-circle">{{ $event->author->fullname }}</p>
