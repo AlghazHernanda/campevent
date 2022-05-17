@@ -146,6 +146,7 @@ class RegisterController extends Controller
             'university' => 'max:255',
             'username' =>  ['max:255', 'unique:users,username,' . auth()->id()], //agar nama username tidak sama dengan yg lain, --
             //--tapi kalo untuk user itu sendiri gamau ganti username jadnya gakenapa kenapa
+            'image' => 'required'
         ]);
 
         if ($request->file('image')) {

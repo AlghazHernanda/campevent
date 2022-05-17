@@ -34,9 +34,15 @@
                                         </div>
                                         <button class="btn btn-1">
                                             Upload Photo
-                                            <input class="form-control @error('image') is-invalid @enderror" type="file"
+                                            <input type="hidden" name="oldImage" value="{{ auth()->user()->fullname }}">
+                                            <input class="form-control @error('image') is-invalid @enderror" value="{{ auth()->user()->fullname }}" type="file"
                                                 id="image" name="image">
                                         </button>
+                                        @error('image')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                         <h5 class="h5-pi">*Image files should be .png or .jpg</h5>
                                     </div>
                                 </div>
