@@ -28,8 +28,14 @@
 
     {{-- manggil navbar di folder partials.navbar --}}
     @include('partials.navbar')
+    <div class="header">
+        <div>
+            <h1 class="h1-header">Profile Setting</h1>
+        </div>
+        <hr class="hr">
+    </div>
 
-    <div class="container-fluid">
+    <div id="profile" class="container-fluid">
 
         @yield('container') {{-- jadi ini nanti isinya halaman-halaman lain, biar pake boostrap nya 1 aja --}}
 
