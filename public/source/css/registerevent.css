@@ -228,9 +228,19 @@ h1, h2, h3, h4, p {
 .text-card{
     width: 145px;
     height: 36px;
-    position: absolute;
-    background: rgba(64, 64, 64, 0.8);
+    position: relative;
+    background: #378C1A;
+    color: #FFFFFF;
+    /* background: rgba(64, 64, 64, 0.8); */
     border-radius: 10px;
+}
+
+.checkbox{
+ margin: 10px;
+}
+
+.form-check{
+  padding-left: 0;
 }
 
 .form-check-input{

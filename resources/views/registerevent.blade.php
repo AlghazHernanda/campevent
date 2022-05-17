@@ -70,56 +70,73 @@
                             <div>
                                 <h2 class="h2-form" style="padding-bottom: 10px; padding-left: 0px;">Event Theme</h2>
                             </div>
-                            <div class="row">
+                            <div class="row" style="padding-bottom: 10px">
                                 <div class="col-sm-4">
                                     <div class="form-check">
                                         {{-- <input type="checkbox" class="form-check-input" id="paid" name="hobby" /> --}}
-                                        <input type="checkbox" class="" name='eventTheme[]' value="paid"> Paid
-                                        <br>
+                                        <p class="text-card">
+                                            <input type="checkbox" class="checkbox" name='eventTheme[]' value="paid">
+                                            <b>Paid</b>
+                                        </p>
+                                        {{-- <b class="status-card">Paid</b> --}}
 
-                                        <label class="form-check-label" for="paid">
+                                        {{-- <label class="form-check-label" for="paid">
                                             <div class="row text-card" style="margin-left: 10px;">
 
                                                 {{-- <div class="col status-card">Paid</div>
-                                    <div class="col info-card">online</div> --}}
+                                        <div class="col info-card">online</div> 
                                             </div>
-                                        </label>
+                                        </label> --}}
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-check">
-                                        <input type="checkbox" name='eventTheme[]' value="online"> online <br />
+                                        <p class="text-card">
+                                            <input type="checkbox" class="checkbox" name='eventTheme[]'
+                                                value="online">
+                                            <b>Online</b>
+                                        </p>
                                         {{-- <input type="checkbox" name='colour[]' value="Red"> paid <br/> --}}
-                                        <label class="form-check-label" for="paid">
+                                        {{-- <label class="form-check-label" for="paid">
                                             <div class="row text-card" style="margin-left: 10px;">
 
                                                 <div class="col info-card">offline</div>
                                             </div>
-                                        </label>
+                                        </label> --}}
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-check">
-                                        <input type="checkbox" name='eventTheme[]' value="free"> free <br />
-                                        <label class="form-check-label" for="paid">
+                                        <p class="text-card">
+                                            <input type="checkbox" class="checkbox" name='eventTheme[]' value="free">
+                                            <b>Free</b>
+                                        </p>
+
+                                        {{-- <label class="form-check-label" for="paid">
                                             <div class="row text-card" style="margin-left: 10px;">
                                                 <div class="col status-card-2">Free</div>
                                                 <div class="col info-card">online</div>
                                             </div>
-                                        </label>
+                                        </label> --}}
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-check">
-                                        <input type="checkbox" name='eventTheme[]' value="offline"> offline <br />
-                                        <label class="form-check-label" for="paid">
+                                        <p class="text-card">
+                                            <input type="checkbox" class="checkbox" name='eventTheme[]'
+                                                value="Offline">
+                                            <b>Offline</b>
+                                        </p>
+
+                                        {{-- <label class="form-check-label" for="paid">
                                             <div class="row text-card" style="margin-left: 10px;">
                                                 <div class="col status-card-2">Free</div>
                                                 <div class="col info-card">offline</div>
                                             </div>
-                                        </label>
+                                        </label> --}}
                                     </div>
                                 </div>
                             </div>
@@ -157,12 +174,14 @@
                                 </h2>
                                 <div class="input-group">
                                     <i class="bi bi-telephone input-group-text"></i>
-                                    <input type="number" class="datepicker form-control @error('no_hp') is-invalid @enderror" name="no_hp" placeholder="08XXXXXXXXXX">
+                                    <input type="number"
+                                        class="datepicker form-control @error('no_hp') is-invalid @enderror" name="no_hp"
+                                        placeholder="08XXXXXXXXXX">
                                     @error('no_hp')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <!-- Section 3 -->
