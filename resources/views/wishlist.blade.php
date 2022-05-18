@@ -5,10 +5,12 @@
         <h3 class="h3-wl">Find your saved event and get ready to attend the event</h3>
     </div>
     <div class="row" style="padding-top: 38px;">
+        @foreach ($loveWishlist as $love)
         @foreach ($events as $event)
-            @if ($event->status === 'accepted')
+        {{-- && $event->id == $loveWishlist->event_id && auth()->user()->id = $loveWishlist->user_id --}}
+            @if ($event->status === 'accepted' && $event->id == $love->event_id)
                 <div class="col">
-                    <div class="card">
+                    <div class="card">loveWishlist
                         <div class="photo">
                             <img src="" class="ifest" alt=" " />
                             {{-- {{ asset('storage/' . $event->image) }} --}}
@@ -38,6 +40,7 @@
                     </div>
                 </div>
             @endif
+        @endforeach
         @endforeach
 
         {{-- <div class="col">

@@ -17,7 +17,8 @@ class WishlistController extends Controller
     public function index()
     {
         return view('wishlist', [
-            "events" => Event::all()
+            'events' => Event::all(),
+            'loveWishlist' => LoveWishlist::all(),
         ]);
     }
 

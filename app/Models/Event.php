@@ -29,4 +29,10 @@ class Event extends Model
         //namanya jadi author, dan mengambil user id
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function love()
+    {
+        //relasi many to many
+        return $this->hasMany(LoveWishlist::class);
+    }
 }
