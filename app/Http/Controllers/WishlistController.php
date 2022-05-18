@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\LoveWishlist;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class WishlistController extends Controller
@@ -24,6 +26,17 @@ class WishlistController extends Controller
         return view('listevent', [
             "events" => Event::all()
         ]);
+    }
+
+    public function loveWishlist(Request $request, Event $event, User $user, LoveWishlist $love)
+    {
+        $request->event_id = $event->id;
+        $request->user_id = auth()->user()->id;
+        LoveWishlist::create([
+            'event_id' => $request->event_id,
+            'user_id' => $request->user_id
+        ]);
+        return redirect('/wishlist')->with('success', 'event has Been deleted');
     }
 
     /**

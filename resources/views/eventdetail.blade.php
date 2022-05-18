@@ -42,7 +42,10 @@ function convertDateDBtoIndo($string){
                         </div>
                     </div>
                     <div class="col-sm">
-                        <a href="#"><button class="btn btn-love"><i class="bi bi-heart-fill fs-4"></i></button></a>
+                        <form action="/eventdetail/{{ $event->id }}" method="post">
+                        @csrf
+                        <button class="btn btn-love"><i class="bi bi-heart-fill fs-4"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
