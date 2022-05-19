@@ -26,7 +26,7 @@ class WishlistController extends Controller
     {
 
         return view('listevent', [
-            "events" => Event::latest("date")->filter(request(['search']))->get()
+            "events" => Event::latest("date")->filter(request(['search', 'eventTypeTo']))->get()
         ]);
     }
 

@@ -27,6 +27,12 @@ class Event extends Model
                     ->orWhere('desc', 'like', '%' . $search . '%');
             });
         });
+
+        $query->when($filters['eventTypeTo'] ?? false, function ($query, $eventTypeTo) {
+            return $query->whereHas('eventTypeTo', function ($query) use ($eventTypeTo) {
+                $query->where('name', $eventTypeTo);
+            });
+        });
     }
 
 
