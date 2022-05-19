@@ -8,9 +8,9 @@
         @foreach ($loveWishlist as $love)
         @foreach ($events as $event)
         {{-- && $event->id == $loveWishlist->event_id && auth()->user()->id = $loveWishlist->user_id --}}
-            @if ($event->status === 'accepted' && $event->id == $love->event_id)
+            @if ($event->status === 'accepted' && $event->id == $love->event_id && auth()->user()->id == $love->user_id)
                 <div class="col">
-                    <div class="card">loveWishlist
+                    <div class="card">
                         <div class="photo">
                             <img src="" class="ifest" alt=" " />
                             {{-- {{ asset('storage/' . $event->image) }} --}}

@@ -411,7 +411,8 @@ function convertDateDBtoIndo($string){
                 </div>
 
                 <div class="col-sm-12">
-                    <a href="#"><button class="btn btn-3">Load more events</button></a>
+                    {{-- <a href="#"><button class="btn btn-3">Load more events</button></a> --}}
+                    {{-- {{ $events->links() }} --}}
                 </div>
 
             </div>
