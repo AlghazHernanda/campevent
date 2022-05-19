@@ -20,7 +20,8 @@ function convertDateDBtoIndo($string){
                     <div class="col-sm">
                         <div class="form-outline1">
                             <i class="bi bi-search fs-5"></i>
-                            <input type="search" id="#" class="form-control1" placeholder="Search your favorite event"
+                            <form action="/listevent">
+                            <input type="search" id="#" class="form-control1" name="search" value="{{ request('search') }}" placeholder="Search your favorite event"
                                 aria-label="Search" />
                         </div>
                     </div>
@@ -32,7 +33,8 @@ function convertDateDBtoIndo($string){
                         </div>
                     </div>
                     <div class="col-sm">
-                        <a href="#"><button class="btn btn-1">Search</button></a>
+                        <button class="btn btn-1" type="submit">Search</button>
+                    </form>
                     </div>
                     <div class="col-sm">
                         <a href="/RegisterEvent"><button class="btn btn-2">Register your event</button></a>

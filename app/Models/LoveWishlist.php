@@ -10,6 +10,7 @@ class LoveWishlist extends Model
     use HasFactory;
     protected $guarded = ['id']; //biar bisa mash input
 
+
     public function loved()
     {
         //relasi one to one

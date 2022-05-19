@@ -16,6 +16,20 @@ class Event extends Model
         'eventTheme' => 'json'
     ];
 
+    // if (request('search')) {
+    //     $events->where('title', 'like', '%' . request('search') . '%');
+    // }
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            return $query->where(function ($query) use ($search) {
+                $query->where('title', 'like', '%' . $search . '%')
+                    ->orWhere('desc', 'like', '%' . $search . '%');
+            });
+        });
+    }
+
+
     //menghubungkn table post dengan category
     public function eventTypeTo()
     {
