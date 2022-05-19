@@ -69,11 +69,14 @@ function convertDateDBtoIndo($string){
                     <!-- 1 -->
                     <!-- 2 -->
                     <h4 style="padding-bottom: 30px; padding-top: 40px;">Theme</h4>
+               
+                    @foreach ($eventTypes as $eventType)
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="#" name="#" />
-                        <p>Tech</p>
+                        <input type="checkbox"  class="form-check-input" id="#" name="eventType" />
+                        <p>{{ $eventType->name }}</p>
                     </div>
-                    <div class="form-check">
+                    @endforeach
+                    {{-- <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="#" name="#" />
                         <p>Sport</p>
                     </div>
@@ -116,7 +119,7 @@ function convertDateDBtoIndo($string){
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="#" name="#" />
                         <p>Other</p>
-                    </div>
+                    </div> --}}
                     <!-- 2 -->
                     <!-- 3 -->
                     <h4 style="padding-bottom: 30px; padding-top: 40px;">Method</h4>
@@ -147,7 +150,7 @@ function convertDateDBtoIndo($string){
                 <div class="head">
                     <div class="row" style="padding-bottom: 42px;">
                         <div class="col-sm-8">
-                            <h2 class="h2-head">Show 50 Events</h2>
+                            <h2 class="h2-head">Show {{$events->count() }} Events</h2>
                         </div>
                         <div class="col-sm-4">
                             <div class="drop-event">
@@ -412,9 +415,15 @@ function convertDateDBtoIndo($string){
                     </div>
                 </div>
 
-                <div class="col-sm-12">
-                    {{-- <a href="#"><button class="btn btn-3">Load more events</button></a> --}}
-                    {{-- {{ $events->links() }} --}}
+                {{-- <div class="col-sm-12">
+                    <a href="#"><button class="btn btn-3">Load more events</button></a>
+
+                </div> --}}
+
+                <div class="center" style="padding-top: 63px; padding-bottom: 64px;">
+                    <div class="pagination">
+                        {{ $events->links() }}
+                    </div>
                 </div>
 
             </div>

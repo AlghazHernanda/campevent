@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
-use App\Models\LoveWishlist;
 use App\Models\User;
+use App\Models\Event;
+use App\Models\EventType;
+use App\Models\LoveWishlist;
 use Illuminate\Http\Request;
 
 class WishlistController extends Controller
@@ -19,6 +20,7 @@ class WishlistController extends Controller
         return view('wishlist', [
             'events' => Event::all(),
             'loveWishlist' => LoveWishlist::all(),
+
         ]);
     }
 
@@ -26,7 +28,8 @@ class WishlistController extends Controller
     {
 
         return view('listevent', [
-            "events" => Event::latest("date")->filter(request(['search', 'eventTypeTo']))->get()
+            "events" => Event::latest("date")->filter(request(['search', 'eventTypeTo']))->paginate(12),
+            'eventTypes' => EventType::all(),
         ]);
     }
 
