@@ -17,7 +17,7 @@ class DasboardEventController extends Controller
     public function index()
     {
         return view('myevent', [
-            'events' => Event::where('user_id', auth()->user()->id)->get(), //dimana user_id nya sama kyk user id yang login
+            'events' => Event::latest()->where('user_id', auth()->user()->id)->get(), //dimana user_id nya sama kyk user id yang login
             // 'themes' => Event::where('eventTheme')
         ]);
     }
