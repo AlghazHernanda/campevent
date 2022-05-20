@@ -59,7 +59,9 @@ class AdminDashboardController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        return view('eventadmin', [
+            'event' => $event
+        ]);
     }
 
     /**

@@ -113,6 +113,7 @@ Route::get('/admin', [AdminDashboardController::class, 'index'])->middleware('ad
 Route::get('/admin/accept/{event:id}', [AdminDashboardController::class, 'edit'])->middleware('admin');
 Route::put('/admin/accept/{event:id}', [AdminDashboardController::class, 'update'])->middleware('admin');
 Route::get('/requestevent', [AdminDashboardController::class, 'requestevent'])->middleware('admin');
+Route::get('/eventadmin/{event:id}', [AdminDashboardController::class, 'show'])->middleware('admin');
 
 
 //contact us
