@@ -1,5 +1,19 @@
 @extends('layouts.requestevent')
 @section('event')
+@php
+function convertDateDBtoIndo($string)
+{
+    // contoh : 2019-01-30
+
+    $bulanIndo = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+    $tanggal = explode('-', $string)[2];
+    $bulan = explode('-', $string)[1];
+    $tahun = explode('-', $string)[0];
+
+    return $tanggal . ' ' . $bulanIndo[abs($bulan)] . ' ' . $tahun;
+}
+@endphp
     <div class="dashboard col container">
         <div class="dashboard">
             <h2 class="h2-dashboard">Requested Event</h2>
@@ -10,22 +24,24 @@
                     <tr>
                         <th>No</th>
                         <th>Event</th>
-                        <th>Description</th>
+                        <th>status</th>
                         <th>Price</th>
                         <th>Date</th>
                         <th>Action</th>
                     </tr>
                 </thead>
+                @foreach ($events as $event)
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Technopreneur 2021</td>
-                        <td>2</td>
-                        <td>Rp 25.000,00</td>
-                        <td>12/01/2021</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $event->title }}</td>
+                        <td>{{ $event->status }}</td>
+                        <td>Rp.{{ format_uang($event->price) }}</td>
+                        <td>{{ convertDateDBtoIndo($event->date) }}</td>
                         <td><a href="#"><button class="btn btn-details">See Details</button></a></td>
                     </tr>
                 </tbody>
+                @endforeach
             </table>
 
         </div>

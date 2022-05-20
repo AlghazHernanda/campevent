@@ -112,6 +112,8 @@ Route::post('/eventdetail/{event:id}', [WishlistController::class, 'loveWishlist
 Route::get('/admin', [AdminDashboardController::class, 'index'])->middleware('admin');
 Route::get('/admin/accept/{event:id}', [AdminDashboardController::class, 'edit'])->middleware('admin');
 Route::put('/admin/accept/{event:id}', [AdminDashboardController::class, 'update'])->middleware('admin');
+Route::get('/requestevent', [AdminDashboardController::class, 'requestevent'])->middleware('admin');
+
 
 //contact us
 Route::get('/contact', [ContactController::class, 'index']);

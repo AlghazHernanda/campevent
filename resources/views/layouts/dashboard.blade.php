@@ -47,12 +47,12 @@
                                 </button>Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link"><button class="btn">
+                            <a href="/requestevent" class="nav-link"><button class="btn">
                                     <p class="bi bi-calendar-week fs-4"></p>
                                 </button>Requested Event</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link"><button class="btn">
+                            <a href="/logout" class="nav-link"><button class="btn">
                                     <p class="bi bi-door-open fs-4"></p>
                                 </button>Logout</a>
                         </li>

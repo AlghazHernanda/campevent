@@ -22,6 +22,14 @@ class AdminDashboardController extends Controller
         ]);
     }
 
+    public function requestevent()
+    {
+        return view('requestevent', [
+            'events' => Event::all(), //dimana user_id nya sama kyk user id yang login
+            'contact' => Contact::all(),
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="col-sm-12">
-                        <h3 class="h3-notif">6</h3>
+                        <h3 class="h3-notif">{{ $contact->count() }}</h3>
                         <h5 class="h5-notif">Question</h5>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="col-sm-12">
-                        <h3 class="h3-notif">17</h3>
+                        <h3 class="h3-notif">{{ $events->count() }}</h3>
                         <h5 class="h5-notif">Event</h5>
                     </div>
                 </div>
