@@ -58,8 +58,8 @@ function convertDateDBtoIndo($string){
             </h4>
             <h3>Date and Time :</h3>
             <p class="bi bi-calendar2-week-fill">{{ convertDateDBtoIndo($event->date)}}</p>
-            <h3 style="padding-top: 40px;">Place :</h3>
-            <p class="bi bi-geo-alt-fill"> Zoom Meeting</p>
+            {{-- <h3 style="padding-top: 40px;">Place :</h3>
+            <p class="bi bi-geo-alt-fill"> Zoom Meeting</p> --}}
             <h3 style="padding-top: 40px;">Speaker :</h3>
             <ul class="speaker">
                 <li>{{ $event->speaker }}</li>

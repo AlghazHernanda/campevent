@@ -6,7 +6,7 @@
                 <span class="d-none d-sm-inline"><img src="/source/img/logo.png" class="logo" alt=" " /></span>
             </div>
             <div class="admin-name">
-                <span class="d-none d-sm-inline">Roisyal Bariz</span>
+                <span class="d-none d-sm-inline">{{ auth()->user()->fullname }}</span>
             </div>
             <div class="p-admin">
                 <span class=" d-none d-sm-inline">CampEvent Staff</span>
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="dashboard col container">
-        <h4-dashboard>Welcome Roisyal Bariz</h4-dashboard>
+        <h4-dashboard>Welcome, {{ auth()->user()->fullname }}</h4-dashboard>
 
         <div class="info container">
             <div class="row d-flex">
