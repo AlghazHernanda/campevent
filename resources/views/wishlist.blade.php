@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                <a href="#"><button class="btn btn-card">See Details</button></a>
+                                <a href="/eventdetail/{{ $event->id }}"><button class="btn btn-card">See Details</button></a>
                             </div>
                         </div>
                     </div>

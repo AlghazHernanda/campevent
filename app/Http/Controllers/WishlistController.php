@@ -26,9 +26,17 @@ class WishlistController extends Controller
 
     public function listEvent()
     {
-
         return view('listevent', [
             "events" => Event::latest("date")->filter(request(['search', 'eventTypeTo']))->paginate(12),
+            'eventTypes' => EventType::all(),
+        ]);
+    }
+
+    public function listEventType(EventType $eventType)
+    {
+        // dd($eventType->id);
+        return view('listevent', [
+            'events' => Event::latest("date")->where('category_id', $eventType->id)->paginate(12),
             'eventTypes' => EventType::all(),
         ]);
     }

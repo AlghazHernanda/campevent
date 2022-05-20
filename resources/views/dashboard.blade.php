@@ -86,7 +86,7 @@
                                 <td>
                                     <div class="action row">
                                         <div class="col-sm">
-                                            <a href="#" class="accept">Accept<a></a>
+                                            <a href="/admin/accept/{{ $event->id }}" class="accept">Accept<a></a>
                                         </div>
                                         <div class="col-sm">
                                             <form action="/deleteEvent/{{ $event->id }}" method="POST"

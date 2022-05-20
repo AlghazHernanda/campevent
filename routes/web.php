@@ -100,6 +100,7 @@ Route::delete('/deleteEvent/{event:id}', [DasboardEventController::class, 'destr
 //whistlist
 Route::get('/wishlist', [WishlistController::class, 'index'])->middleware('auth');
 Route::get('/listevent', [WishlistController::class, 'listEvent'])->middleware('auth');
+Route::get('/listevent/{eventType:id}', [WishlistController::class, 'listEventType'])->middleware('auth');
 Route::post('/eventdetail/{event:id}', [WishlistController::class, 'loveWishlist'])->middleware('auth');
 
 //admin

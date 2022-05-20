@@ -49,7 +49,7 @@ function convertDateDBtoIndo($string){
             <div class="col-sm-3">
                 <div class="filter">
                     <!-- 1 -->
-                    <h4 style="padding-bottom: 30px;">Events</h4>
+                    {{-- <h4 style="padding-bottom: 30px;">Events</h4>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="#" name="#" />
                         <p>Talkshow</p>
@@ -65,14 +65,15 @@ function convertDateDBtoIndo($string){
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="#" name="#" />
                         <p>Training</p>
-                    </div>
+                    </div> --}}
                     <!-- 1 -->
                     <!-- 2 -->
                     <h4 style="padding-bottom: 30px; padding-top: 40px;">Theme</h4>
                
                     @foreach ($eventTypes as $eventType)
                     <div class="form-check">
-                        <input type="checkbox"  class="form-check-input" id="#" name="eventType" />
+                        {{-- <input type="checkbox"  class="form-check-input" id="#" name="eventType" /> --}}
+                        <a href="/listevent/{{ $eventType->id }}"><button class="btn btn-info"></button></a>
                         <p>{{ $eventType->name }}</p>
                     </div>
                     @endforeach
