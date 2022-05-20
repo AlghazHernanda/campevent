@@ -59,8 +59,7 @@
                     </ul>
                 </div>
             </div>
-
-            @yield('dashboard')
+            @yield('event')
 
         </div>
     </div>

@@ -54,6 +54,11 @@ Route::get('dashboard', function () {
     return view('dashboard');
 });
 
+//request event
+// Route::get('requestevent', function () {
+//     return view('requestevent');
+// });
+
 //login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 //login authenticate
