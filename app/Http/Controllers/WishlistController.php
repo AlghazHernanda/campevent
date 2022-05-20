@@ -18,7 +18,7 @@ class WishlistController extends Controller
     public function index()
     {
         return view('wishlist', [
-            'events' => Event::all(),
+            'events' => Event::latest("date")->paginate(12),
             'loveWishlist' => LoveWishlist::all(),
 
         ]);

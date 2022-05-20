@@ -11,11 +11,13 @@
                 </div>
                 <div class="row">
                     <div class="form-outline col-sm-5">
-                        <input type="search" id="#" class="form-control" placeholder="Search your favorite event"
+                        <form action="/listevent">
+                        <input type="search" id="#" class="form-control"  name="search" value="{{ request('search') }}"  placeholder="Search your favorite event"
                             aria-label="Search" />
                     </div>
                     <div class="col-sm">
-                        <a href="#"><button class="btn btn-1">Search</button></a>
+                        <button class="btn btn-1" type="submit">Search</button>
+                    </form>
                     </div>
                 </div>
             </div>

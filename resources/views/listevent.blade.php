@@ -123,7 +123,7 @@ function convertDateDBtoIndo($string){
                     </div> --}}
                     <!-- 2 -->
                     <!-- 3 -->
-                    <h4 style="padding-bottom: 30px; padding-top: 40px;">Method</h4>
+                    {{-- <h4 style="padding-bottom: 30px; padding-top: 40px;">Method</h4>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="#" name="#" />
                         <p>Offline</p>
@@ -142,7 +142,7 @@ function convertDateDBtoIndo($string){
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="#" name="#" />
                         <p>Free</p>
-                    </div>
+                    </div> --}}
                     <!-- 4 -->
                 </div>
             </div>
@@ -153,7 +153,7 @@ function convertDateDBtoIndo($string){
                         <div class="col-sm-8">
                             <h2 class="h2-head">Show {{$events->count() }} Events</h2>
                         </div>
-                        <div class="col-sm-4">
+                        {{-- <div class="col-sm-4">
                             <div class="drop-event">
                                 <i class="bi bi-sort-down fs-2"></i>
                                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -168,7 +168,7 @@ function convertDateDBtoIndo($string){
                                     <li><label class="checkbox"><input type="checkbox"> Last Updated</label></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 
