@@ -251,4 +251,9 @@
         </div>
     </div>
     </div>
+        {{-- <div class="center" style="padding-top: 63px; padding-bottom: 64px;">
+                    <div class="pagination">
+                        {{ $events->links() }}
+                    </div>
+                </div> --}}
 @endsection
