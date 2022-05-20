@@ -180,7 +180,7 @@ function convertDateDBtoIndo($string){
                             <div class="col">
                                 <div class="card">
                                     <div class="photo">
-                                        <img src="{{ asset('storage/' . $event->image) }}" class="ifest" alt=" " />
+                                        <img src="{{ asset('storage/' . $event->image) }}" class="" alt=" " />
                                         <div class="row text-card">
                                             @for ($i = 0; $i < 2; $i++)
                                                 <div class="col status-card">{{ $event->eventTheme[$i] }}</div>
