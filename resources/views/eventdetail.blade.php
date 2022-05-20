@@ -20,7 +20,7 @@ function convertDateDBtoIndo($string){
         <hr class="hr">
 
         <div class="photo">
-            <img src="{{ $event->image }}" class="ifest" alt=" " />
+            <img src="{{ asset('storage/' . $event->image) }}" class="ifest" alt=" " />
         </div>
 
         <div class="techno">

@@ -109,6 +109,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row" style="padding-top: 38px;">
+                        @foreach ($events as $event)
                         <div class="col">
                             <div class="card">
                                 <div class="photo">
@@ -133,8 +134,9 @@
                                 </div>
                             </div>
                         </div>
+                        @endforeach
 
-                        <div class="col">
+                        {{-- <div class="col">
                             <div class="card">
                                 <div class="photo">
                                     <img src="/source/img/ifest.png" class="ifest" alt=" " />
@@ -311,7 +313,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

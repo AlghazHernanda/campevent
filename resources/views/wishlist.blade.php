@@ -12,10 +12,10 @@
                 <div class="col">
                     <div class="card">
                         <div class="photo">
-                            <img src="" class="ifest" alt=" " />
+                            <img src="{{ asset('storage/' . $event->image) }}" class="ifest" alt=" " />
                             {{-- {{ asset('storage/' . $event->image) }} --}}
                             <div>
-                                <img src="Vector-2.png" class="love" alt=" " />
+                                <img src="" class="love" alt=" " />
                             </div>
                             <div class="row text-card">
                                 @for ($i = 0; $i < 2; $i++)

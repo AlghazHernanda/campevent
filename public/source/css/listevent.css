@@ -269,14 +269,14 @@ h1 {
   #section2 .status-card{
       margin-top: 10px;
       margin-left: 6px;
-      width: 57px;
+      width: 60px;
       height: 17px;
       background: #FFF3CD;
       border-radius: 10px;
       font-family: 'Poppins';
       font-style: normal;
       font-weight: 600;
-      font-size: 12px;
+      font-size: 10px;
       line-height: 15px;
       color: #000000;
       text-align: center;
