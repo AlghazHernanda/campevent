@@ -187,7 +187,7 @@ function convertDateDBtoIndo($string){
                                                 {{-- <div class="col status-card">{{ $event->eventTheme[1]}}</div> --}}
                                             @endfor
                                             {{-- <div class="col status-card">Paid</div>
-                            <div class="col info-card">online</div> --}}
+                                                <div class="col info-card">online</div> --}}
                                         </div>
                                     </div>
                                     <div class="card-body">
