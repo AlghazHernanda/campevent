@@ -12,12 +12,13 @@
                 <div class="row">
                     <div class="form-outline col-sm-5">
                         <form action="/listevent">
-                        <input type="search" id="#" class="form-control"  name="search" value="{{ request('search') }}"  placeholder="Search your favorite event"
-                            aria-label="Search" />
+                            <input type="search" id="#" class="form-control" name="search"
+                                value="{{ request('search') }}" placeholder="Search your favorite event"
+                                aria-label="Search" />
                     </div>
                     <div class="col-sm">
                         <button class="btn btn-1" type="submit">Search</button>
-                    </form>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -109,33 +110,34 @@
 
             <!-- The slideshow/carousel -->
             <div class="carousel-inner">
+                {{-- Logic foreach --}}
                 <div class="carousel-item active">
                     <div class="row" style="padding-top: 38px;">
                         @foreach ($events as $event)
-                        <div class="col">
-                            <div class="card">
-                                <div class="photo">
-                                    <img src="/source/img/ifest.png" class="ifest" alt=" " />
-                                    <div class="row text-card">
-                                        <div class="col status-card">Paid</div>
-                                        <div class="col info-card">online</div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <p class="bi bi-calendar-date"> 29 Oct 2021 </p>
-                                        </div>
-                                        <div class="col-sm">
-                                            <p class="bi bi-person-circle"> Roisyal </p>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="photo">
+                                        <img src="/source/img/ifest.png" class="ifest" alt=" " />
+                                        <div class="row text-card">
+                                            <div class="col status-card">Paid</div>
+                                            <div class="col info-card">online</div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12">
-                                        <a href="#"><button class="btn btn-card">See Details</button></a>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <p class="bi bi-calendar-date"> 29 Oct 2021 </p>
+                                            </div>
+                                            <div class="col-sm">
+                                                <p class="bi bi-person-circle"> Roisyal </p> {{-- Tambahin value user --}}
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <a href="#"><button class="btn btn-card">See Details</button></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
 
                         {{-- <div class="col">
@@ -212,10 +214,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div> --}}
                     </div>
-                </div>
 
-                <div class="carousel-item">
+                    {{-- <div class="carousel-item"> 
                     <div class="row" style="padding-top: 38px;">
                         <div class="col">
                             <div class="card">
@@ -315,50 +317,51 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div> 
+                    </div>
+                </div> --}}
+                </div>
+            </div>
+            <div class="col-sm-12" style="padding-top: 99px;">
+                <a href="/listevent"><button class="btn btn-3">Explore All Events</button></a>
+            </div>
+        </div>
+
+
+        <!-- Section 4 -->
+        <div id="sectionFour">
+            <div class="row">
+                <div class="col-sm-4" style="padding-top: 28px;">
+                    <img src="/source/img/vector-image-section4.png" class="img-section4">
+                </div>
+                <div class="col-sm-8">
+                    <h1 class="h1-secFour">Do you have an impactful event for students?</h1>
+                    <h3 class="h3-secFour">You can boost your event and promote with us!</h3>
+                    <a href="/RegisterEvent"><button class="btn btn-1">Register Your Event</button></a>
+                </div>
+            </div>
+        </div>
+        <!-- Section 4 -->
+
+        <!-- Section 5 -->
+        <div id="sectionFive">
+            <div class="col-sm-12">
+                <div class="notif shadow-lg">
+                    <div class="row">
+                        <div class="capt-secFive col-sm-8">
+                            <h2 class="h2-secFive">Is there any problem</h2>
+                            <h2 class="h2-secFive">issue?</h2>
+                            <h4 class="h4-secFive">Don’t worry, we have 24/7 customer service for you to solve your
+                                problem
+                            </h4>
+                            <a href="/contact"><button class="btn btn-1">Contact Us</button></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="/source/img/vector-image-section5.jpg" class="img-section5">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-12" style="padding-top: 99px;">
-            <a href="/listevent"><button class="btn btn-3">Explore All Events</button></a>
-        </div>
-    </div>
-
-
-    <!-- Section 4 -->
-    <div id="sectionFour">
-        <div class="row">
-            <div class="col-sm-4" style="padding-top: 28px;">
-                <img src="/source/img/vector-image-section4.png" class="img-section4">
-            </div>
-            <div class="col-sm-8">
-                <h1 class="h1-secFour">Do you have an impactful event for students?</h1>
-                <h3 class="h3-secFour">You can boost your event and promote with us!</h3>
-                <a href="/RegisterEvent"><button class="btn btn-1">Register Your Event</button></a>
-            </div>
-        </div>
-    </div>
-    <!-- Section 4 -->
-
-    <!-- Section 5 -->
-    <div id="sectionFive">
-        <div class="col-sm-12">
-            <div class="notif shadow-lg">
-                <div class="row">
-                    <div class="capt-secFive col-sm-8">
-                        <h2 class="h2-secFive">Is there any problem</h2>
-                        <h2 class="h2-secFive">issue?</h2>
-                        <h4 class="h4-secFive">Don’t worry, we have 24/7 customer service for you to solve your problem
-                        </h4>
-                        <a href="/contact"><button class="btn btn-1">Contact Us</button></a>
-                    </div>
-                    <div class="col-sm-4">
-                        <img src="/source/img/vector-image-section5.jpg" class="img-section5">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Section 5 -->
-@endsection
+        <!-- Section 5 -->
+    @endsection

@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{ asset('source/css/navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('source/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('source/css/landing.css') }}">
+    <link rel="stylesheet" href="{{ asset('source/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('source/css/slick-theme.css') }}">
 
     <title>CampEvent</title>
 </head>
@@ -41,7 +43,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/source/js/slick.min.js"></script>
 
+    <script>
+        $(document).ready(function() {
+            $('.carousel').slick({
+                setting - name: setting - value
+            });
+        });
+    </script>
 </body>
 
 </html>
