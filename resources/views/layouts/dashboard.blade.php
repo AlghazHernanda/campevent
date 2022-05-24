@@ -42,7 +42,7 @@
                     </div>
                     <ul class="nav" id="menu">
                         <li class="nav-item">
-                            <a href="/dashboard" class="nav-link"><button class="btn">
+                            <a href="/admin" class="nav-link"><button class="btn">
                                     <p class="bi bi-house fs-4"></p>
                                 </button>Dashboard</a>
                         </li>

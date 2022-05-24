@@ -38,7 +38,7 @@ function convertDateDBtoIndo($string)
                         <td>{{ $event->status }}</td>
                         <td>Rp.{{ format_uang($event->price) }}</td>
                         <td>{{ convertDateDBtoIndo($event->date) }}</td>
-                        <td><a href="#"><button class="btn btn-details">See Details</button></a></td>
+                        <td><a href="/eventadmin/{{ $event->id }}"><button class="btn btn-details">See Details</button></a></td>
                     </tr>
                 </tbody>
                 @endforeach
