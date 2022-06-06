@@ -218,7 +218,7 @@
             @endforeach
         </div>
 
-        <div class="col-sm-12" style="padding-top: 99px;">
+        <div class="col-sm-12" style="padding-top: 70px;">
             <a href="/listevent"><button class="btn btn-3">Explore All Events</button></a>
         </div>
     </div>
