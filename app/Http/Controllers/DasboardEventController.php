@@ -37,7 +37,7 @@ class DasboardEventController extends Controller
     public function welcomeShow()
     {
         return view('welcome', [
-            "events" => Event::all()
+            "events" => Event::latest("date")->paginate(4)
         ]);
     }
 
