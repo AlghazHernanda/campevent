@@ -1,18 +1,19 @@
 @extends('layouts.home') {{-- ini memanggil file main yang di dalam layout --}}
 @section('landing')
-@php
-function convertDateDBtoIndo($string){
-    // contoh : 2019-01-30
-    
-    $bulanIndo = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September' , 'Oktober', 'November', 'Desember'];
- 
-    $tanggal = explode("-", $string)[2];
-    $bulan = explode("-", $string)[1];
-    $tahun = explode("-", $string)[0];
- 
-    return $tanggal . " " . $bulanIndo[abs($bulan)] . " " . $tahun;
-}
-@endphp
+    @php
+    function convertDateDBtoIndo($string)
+    {
+        // contoh : 2019-01-30
+
+        $bulanIndo = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+        $tanggal = explode('-', $string)[2];
+        $bulan = explode('-', $string)[1];
+        $tahun = explode('-', $string)[0];
+
+        return $tanggal . ' ' . $bulanIndo[abs($bulan)] . ' ' . $tahun;
+    }
+    @endphp
     <div id="sectionOne">
         <div class="row">
             <div class="col-sm-7" style="padding-top: 181px;">
@@ -111,35 +112,35 @@ function convertDateDBtoIndo($string){
         <br>
         <div class="row">
             @foreach ($events as $event)
-            @if ($event->status === 'accepted')
-            <div class="col">
-                <div class="card">
-                    <div class="photo">
-                        <img src="{{ asset('storage/' . $event->image) }}" class="ifest" alt=" " />
-                        <div class="row text-card">
-                            @for ($i = 0; $i < 2; $i++)
-                            <div class="col status-card">{{ $event->eventTheme[$i] }}</div>
-                            {{-- <div class="col status-card">{{ $event->eventTheme[1]}}</div> --}}
-                        @endfor
+                @if ($event->status === 'accepted')
+                    <div class="col">
+                        <div class="card">
+                            <div class="photo">
+                                <img src="{{ asset('storage/' . $event->image) }}" class="ifest" alt=" " />
+                                <div class="row text-card">
+                                    @for ($i = 0; $i < 2; $i++)
+                                        <div class="col status-card">{{ $event->eventTheme[$i] }}</div>
+                                    @endfor
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p class="bi bi-calendar-date">{{ convertDateDBtoIndo($event->date) }}</p>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <p class="bi bi-person-circle"> {{ $event->author->fullname }} </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <a href="/eventdetail/{{ $event->id }}"><button class="btn btn-card">See
+                                            Details</button></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm">
-                                <p class="bi bi-calendar-date">{{ convertDateDBtoIndo($event->date)}}</p>
-                            </div>
-                            <div class="col-sm">
-                                <p class="bi bi-person-circle"> {{ $event->author->fullname }} </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <a href="/eventdetail/{{ $event->id }}"><button class="btn btn-card">See Details</button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            {{-- <div class="col">
+                    {{-- <div class="col">
                 <div class="card">
                     <div class="photo">
                         <img src="/source/img/ifest.png" class="ifest" alt=" " />
@@ -213,7 +214,7 @@ function convertDateDBtoIndo($string){
                     </div>
                 </div>
             </div> --}}
-            @endif
+                @endif
             @endforeach
         </div>
 
