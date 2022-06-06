@@ -119,13 +119,3 @@ Route::get('/eventadmin/{event:id}', [AdminDashboardController::class, 'show'])-
 //contact us
 Route::get('/contact', [ContactController::class, 'index']);
 Route::post('/contact', [ContactController::class, 'store']);
-
-//My Event
-// Route::get('myevent', function () {
-//     return view('myevent');
-// });
-
-// //register check
-// Route::get('registercheck', function () {
-//     return view('registercheck');
-// });

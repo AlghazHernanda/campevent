@@ -160,11 +160,14 @@ h1, h2, h3, h4, p {
     color: #DBDBDB;
 }
 
-.dropdown-item{
-  width: 241px;
-  height: 45px;
+.drop1{
+    width: auto;
+    height: auto;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding-top: 0px;
 }
-
 .garis{
     border: 1px solid #000000;
     width: 715px;
@@ -363,4 +366,8 @@ h1, h2, h3, h4, p {
   font-size: 18px;
   line-height: 27px;
   color: #000000;
+}
+
+.brosur{
+  width: auto;
 }
