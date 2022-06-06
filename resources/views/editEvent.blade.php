@@ -32,7 +32,7 @@
                                         <h2 class="h2-form">Event Title</h2>
                                     </label>
                                     <input type="text" class="fc-sc1 form-control @error('title') is-invalid @enderror"
-                                        name="title" id="title" placeholder="Enter your event title">
+                                        name="title" id="title" placeholder="Enter your event title" value="{{ old('title', $event->title) }}">
                                     @error('title')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -115,7 +115,7 @@
                                         <h2 class="h2-form">Event Description</h2>
                                     </label>
                                     <textarea type="text" class="fc-sc3 form-control @error('desc') is-invalid @enderror" name="desc" id="#"
-                                        placeholder="Drop the description of your event"></textarea>
+                                        placeholder="Drop the description of your event">{{ $event->desc }}</textarea>
                                     @error('desc')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -175,7 +175,7 @@
                                             <h2 class="h2-form">Speaker</h2>
                                         </label>
                                         <textarea type="text" name="speaker" class="fc-sc3 form-control @error('speaker') is-invalid @enderror" name="speaker"
-                                            id="#" placeholder="Please insert event speaker with list"></textarea>
+                                            id="#" placeholder="Please insert event speaker with list">{{ $event->speaker }}</textarea>
                                         @error('speaker')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -190,7 +190,7 @@
                                         </label>
                                         <input type="number" name="price"
                                             class="fc-sc5 form-control @error('price') is-invalid @enderror" name="price"
-                                            id="#" placeholder="Rp">
+                                            id="#" placeholder="Rp" value="{{ old('price', $event->price) }}">
                                         @error('price')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
