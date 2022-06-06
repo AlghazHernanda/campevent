@@ -110,11 +110,14 @@
 
             <!-- The slideshow/carousel -->
             <div class="carousel-inner">
-                @foreach ($events as $event)
+               
                     <div class="carousel-item active">
                         <div class="row" style="padding-top: 38px;">
                             <div class="col">
+                                @foreach ($events as $event)
+                                @if ($event->status === 'accepted')
                                 <div class="card">
+                                   
                                     <div class="photo">
                                         <img src="/source/img/ifest.png" class="ifest" alt=" " />
                                         <div class="row text-card">
@@ -136,10 +139,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
+                                @endforeach    
                             </div>
                         </div>
                     </div>
-                @endforeach
+                   
+
+
+                    
                 {{-- <div class="carousel-item"> 
                     <div class="row" style="padding-top: 38px;">
                         <div class="col">
