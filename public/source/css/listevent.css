@@ -208,7 +208,7 @@ h1 {
   
   #section2 .card{
       width: 250px;
-      height: 355px;
+      height: auto;
       background: #F8F8F9;
       border: 0px;
       border-radius: 20px;

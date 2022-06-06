@@ -278,7 +278,7 @@ h1 {
   
   #sectionThree .card{
     width: 250px;
-    height: 355px;
+    height: auto;
     background: #F8F8F9;
     border: 0px;
     border-radius: 20px;
@@ -306,7 +306,7 @@ h1 {
   }
   
   #sectionThree .btn-card{
-    margin-top: 24px;
+    margin-top: 5px;
     width: 199px;
     height: 38px;
     background: #008E89;
@@ -344,7 +344,7 @@ h1 {
     width: 125px;
     height: 36px;
     position: absolute;
-    left: 137px;
+    left: 130px;
     top: 215px;
     background: rgba(64, 64, 64, 0.8);
     border-radius: 10px;
@@ -353,14 +353,14 @@ h1 {
   #sectionThree .status-card{
     margin-top: 10px;
     margin-left: 6px;
-    width: 65px;
+    width: 60px;
     height: 17px;
     background: #FFF3CD;
     border-radius: 10px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 15px;
     color: #000000;
     text-align: center;
