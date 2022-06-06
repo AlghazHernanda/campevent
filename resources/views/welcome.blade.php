@@ -113,9 +113,10 @@
                
                     <div class="carousel-item active">
                         <div class="row" style="padding-top: 38px;">
+                            @foreach ($events as $event)
+                            @if ($event->status === 'accepted')
                             <div class="col">
-                                @foreach ($events as $event)
-                                @if ($event->status === 'accepted')
+                               
                                 <div class="card">
                                    
                                     <div class="photo">
@@ -139,9 +140,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
-                                @endforeach    
+                               
                             </div>
+                            @endif
+                            @endforeach    
                         </div>
                     </div>
                    
