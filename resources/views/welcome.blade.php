@@ -113,6 +113,43 @@
 
                 <div class="carousel-item active">
                     <div class="row" style="padding-top: 38px;">
+                        @foreach ($events as $event)
+                            @if ($event->status === 'accepted')
+                                <div class="col">
+
+                                    <div class="card">
+
+                                        <div class="photo">
+                                            <img src="/source/img/ifest.png" class="ifest" alt=" " />
+                                            <div class="row text-card">
+                                                <div class="col status-card">Paid</div>
+                                                <div class="col info-card">online</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm">
+                                                    <p class="bi bi-calendar-date"> 29 Oct 2021 </p>
+                                                </div>
+                                                <div class="col-sm">
+                                                    <p class="bi bi-person-circle"> Roisyal </p> {{-- Tambahin value user --}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <a href="#"><button class="btn btn-card">See Details</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+
+
+                <div class="carousel-item active">
+                    <div class="row" style="padding-top: 38px;">
                         <div class="col">
                             @foreach ($events as $event)
                                 @if ($event->status === 'accepted')
