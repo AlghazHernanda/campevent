@@ -178,7 +178,7 @@ class DasboardEventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //untuk mendelete image lama
+        //untuk mendelete image lama agar ga numpuk
         if ($event->image) {
             Storage::delete($event->image);
         }
